@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact - Arthur Henriques Garcia</title>
+	<link rel="stylesheet" href="CSS/site-shell.css">
+	<link rel="stylesheet" href="CSS/content-pages.css">
+</head>
+<body>
+	<!-- Burger Menu -->
+	<nav class="navbar">
+		<div class="nav-container">
+			<a href="Index.html" class="back-btn">← Back to Home</a>
+			<button class="burger-menu" id="burgerBtn" aria-label="Toggle menu">
+				<span></span><span></span><span></span>
+			</button>
+			<ul class="nav-menu" id="navMenu">
+				<li><a href="Index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="cv.html">CV</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Contact Section -->
+	<section class="section contact-section page-card page-compact">
+		<h1 class="page-title">Get in Touch</h1>
+		<div class="contact-content">
+			<p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+
+			<h3 class="section-subtitle">Contact Information</h3>
+			<p><strong>Email:</strong> <a href="mailto:arthurhgarcia10@gmail.com">arthurhgarcia10@gmail.com</a></p>
+
+			<h3 class="section-subtitle">Social Links</h3>
+			<p class="contact-links">
+				<a href="https://github.com/zmbfiedk" target="_blank" rel="noopener noreferrer">GitHub</a><br>
+				<a href="https://www.instagram.com/zmbfiedk_backup_/" target="_blank" rel="noopener noreferrer">Instagram</a><br>
+				<a href="https://www.linkedin.com/in/arthur-hgarcia-210810385/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+			</p>
+
+			<h3 class="section-subtitle">Quick Message</h3>
+			<form class="contact-form">
+				<input class="form-field" type="text" placeholder="Your Name">
+				<input class="form-field" type="email" placeholder="Your Email">
+				<textarea class="form-field form-field--textarea" placeholder="Your Message" rows="5"></textarea>
+				<button class="btn-primary" type="submit">Send Message</button>
+			</form>
+
+			<div class="section-actions">
+				<a href="Index.html" class="btn-secondary">Back to About Me</a>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">© <span id="year"></span> Arthur Henriques Garcia</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+	<script src="js/site-shell.js"></script>
+	<script src="js/contact.js"></script>
+	<script src="js/contact-page.js"></script>
+</body>
+</html>

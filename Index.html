@@ -1,0 +1,130 @@
+
+	<!doctype html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Portfolio - Arthur Henriques Garcia</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<nav class="navbar" aria-label="Site menu">
+			<div class="nav-container">
+				<button class="burger-menu" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+					<span></span><span></span><span></span>
+				</button>
+				<ul class="nav-menu" id="navMenu">
+					<li><a href="Index.html">Home</a></li>
+					<li><a href="about.html">About Me</a></li>
+					<li><a href="cv.html">CV</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<main id="homeView">
+			<header class="hero">
+				<h1 class="name">Arthur Henriques Garcia</h1>
+				<p class="role">Overall Tool developer</p>
+			</header>
+
+			<section class="xmb-shell" id="xmbShell" aria-label="XMB Navigation">
+				<div class="xmb-ribbon" id="xmbRibbon" role="tablist" aria-label="Main Sections">
+					<button id="tab-projects" class="xmb-section-tile" data-section="projects" type="button" role="tab" aria-selected="true" aria-controls="panel-projects" tabindex="0">
+						<span class="xmb-icon" aria-hidden="true">
+							<img class="xmb-icon-media xmb-icon-media--wide xmb-icon-media--project-left" src="TabIcon/Main/Project%20main.png" alt="">
+						</span>
+						<span class="xmb-title">Projects</span>
+					</button>
+					<button id="tab-about" class="xmb-section-tile" data-section="about" type="button" role="tab" aria-selected="false" aria-controls="panel-about" tabindex="-1">
+						<span class="xmb-icon" aria-hidden="true">
+							<img class="xmb-icon-media" src="TabIcon/Icon/About%20me%20Icon.png" alt="">
+						</span>
+						<span class="xmb-title">About Me</span>
+					</button>
+					<button id="tab-cv" class="xmb-section-tile" data-section="cv" type="button" role="tab" aria-selected="false" aria-controls="panel-cv" tabindex="-1">
+						<span class="xmb-icon" aria-hidden="true">
+							<img class="xmb-icon-media" src="TabIcon/Icon/CV%20icon.png" alt="">
+						</span>
+						<span class="xmb-title">CV</span>
+					</button>
+					<button id="tab-contact" class="xmb-section-tile" data-section="contact" type="button" role="tab" aria-selected="false" aria-controls="panel-contact" tabindex="-1">
+						<span class="xmb-icon" aria-hidden="true">
+							<img class="xmb-icon-media xmb-icon-media--contact-left" src="TabIcon/Icon/Contact%20me%20Icon.png" alt="">
+						</span>
+						<span class="xmb-title">Contact</span>
+					</button>
+				</div>
+
+				<div class="xmb-panels" id="xmbPanels">
+					<section id="panel-projects" class="xmb-panel" data-panel="projects" role="tabpanel" aria-labelledby="tab-projects" aria-hidden="false">
+						<div class="xmb-projects-layout">
+							<section class="project-selector" aria-label="Project selector">
+								<div class="selector-grid" id="selectorGrid" role="list" aria-label="Project disks">
+									<button class="project-selector-box" type="button" role="listitem" tabindex="0" data-project="0" data-name="Tower of Babell" data-img="https://via.placeholder.com/300x300/16a34a/000000?text=Tower+of+Babell" data-engine="Unity" data-language="C#" aria-label="Tower of Babell project" style="background-image:url('Background/M4BO_Startscreen.png');background-size:calc(98% + 5px) 118%;background-repeat:no-repeat;background-position:center;"><span class="box-label">Tower of Babell</span></button>
+									<button class="project-selector-box" type="button" role="listitem" tabindex="-1" data-project="1" data-name="Arthurs Playground" data-img="https://via.placeholder.com/300x300/16a34a/000000?text=Playground" data-engine="Unity" data-language="C#" aria-label="Arthurs Playground project" style="background-image:url('https://via.placeholder.com/300x300/16a34a/000000?text=Playground')"><span class="box-label">Arthurs Playground</span></button>
+									<button class="project-selector-box" type="button" role="listitem" tabindex="-1" data-project="2" data-name="TowerDefense" data-img="https://via.placeholder.com/300x300/16a34a/000000?text=TowerDefense" data-engine="Unity" data-language="C#" aria-label="TowerDefense project" style="background-image:url('https://via.placeholder.com/300x300/16a34a/000000?text=TowerDefense')"><span class="box-label">TowerDefense</span></button>
+									<button class="project-selector-box" type="button" role="listitem" tabindex="-1" data-project="3" data-name="Godot game" data-img="https://via.placeholder.com/300x300/16a34a/000000?text=Godot" data-engine="Godot" data-language="GDScript" aria-label="Godot game project" style="background-image:url('https://via.placeholder.com/300x300/16a34a/000000?text=Godot')"><span class="box-label">Godot game</span></button>
+									<button class="project-selector-box" type="button" role="listitem" tabindex="-1" data-project="4" data-name="Small C++ games" data-img="https://via.placeholder.com/300x300/16a34a/000000?text=C++" data-engine="Custom" data-language="C++" aria-label="Small C++ games project" style="background-image:url('https://via.placeholder.com/300x300/16a34a/000000?text=C++')"><span class="box-label">Small C++ games</span></button>
+									<button class="project-selector-box" type="button" role="listitem" tabindex="-1" data-project="5" data-name="Fractured" data-img="https://via.placeholder.com/300x300/16a34a/000000?text=Fractured" data-engine="Unity" data-language="C#" aria-label="Fractured project" style="background-image:url('https://via.placeholder.com/300x300/16a34a/000000?text=Fractured')"><span class="box-label">Fractured</span></button>
+									<button class="project-selector-box" type="button" role="listitem" tabindex="-1" data-project="6" data-name="Roguelike Action Platformer" data-img="https://via.placeholder.com/300x300/16a34a/000000?text=Roguelike" data-engine="Unity" data-language="C#" aria-label="Roguelike Action Platformer project" style="background-image:url('https://via.placeholder.com/300x300/16a34a/000000?text=Roguelike')"><span class="box-label">Roguelike Platformer</span></button>
+									<button class="project-selector-box" type="button" role="listitem" tabindex="-1" data-project="7" data-name="Vertical Slice" data-img="https://via.placeholder.com/300x300/16a34a/000000?text=Vertical+Slice" data-engine="Unity" data-language="C#" aria-label="Vertical Slice project" style="background-image:url('https://via.placeholder.com/300x300/16a34a/000000?text=Vertical+Slice')"><span class="box-label">Vertical Slice</span></button>
+								</div>
+							</section>
+
+							<div class="main-display" id="mainDisplay" aria-live="polite">
+								<div class="display-content" id="displayContent"></div>
+							</div>
+						</div>
+					</section>
+
+					<section id="panel-about" class="xmb-panel" data-panel="about" role="tabpanel" aria-labelledby="tab-about" aria-hidden="true">
+						<div class="xmb-page-layout">
+							<div class="xmb-page-icon-wrap">
+								<img class="xmb-page-icon xmb-page-icon--wide xmb-page-icon--about-left" src="TabIcon/Main/About%20me%20main.png" alt="About Me icon">
+							</div>
+							<div class="xmb-page-content xmb-info-card panel-scroll" tabindex="-1" data-source="about.html" data-source-root=".about-section">
+								<p>Loading About Me…</p>
+							</div>
+						</div>
+					</section>
+
+					<section id="panel-cv" class="xmb-panel" data-panel="cv" role="tabpanel" aria-labelledby="tab-cv" aria-hidden="true">
+						<div class="xmb-page-layout">
+							<div class="xmb-page-icon-wrap">
+								<img class="xmb-page-icon xmb-page-icon--wide" src="TabIcon/Main/CV%20main.png" alt="CV icon">
+							</div>
+							<div class="xmb-page-content xmb-info-card panel-scroll" tabindex="-1" data-source="cv.html" data-source-root=".cv-section">
+								<p>Loading CV…</p>
+							</div>
+						</div>
+					</section>
+
+					<section id="panel-contact" class="xmb-panel" data-panel="contact" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
+						<div class="xmb-page-layout">
+							<div class="xmb-page-icon-wrap">
+								<img class="xmb-page-icon" src="TabIcon/Main/Contact%20me%20main.png" alt="Contact icon">
+							</div>
+							<div class="xmb-page-content xmb-info-card panel-scroll" tabindex="-1" data-source="contact.html" data-source-root=".contact-section">
+								<p>Loading Contact…</p>
+							</div>
+						</div>
+					</section>
+				</div>
+			</section>
+
+			<div id="xmbLive" class="sr-only" aria-live="polite"></div>
+		</main>
+
+		<footer class="footer">© <span id="year"></span> Arthur Henriques Garcia</footer>
+
+		<noscript>
+			<style>
+				.xmb-panel{display:block!important;opacity:1!important;transform:none!important}
+			</style>
+		</noscript>
+
+		<script src="js/site-shell.js"></script>
+		<script src="xmb.js"></script>
+	</body>
+	</html>
