@@ -1,9 +1,9 @@
 ## XMB Integration Notes
 
 ### File placement
-- `Index.html` (home entry) at project root.
+- `index.html` (home entry) at project root.
 - `styles.css` at project root.
-- `xmb.js` at project root and loaded at the end of `Index.html`.
+- `xmb.js` at project root and loaded at the end of `index.html`.
 
 ### Adjustable constants
 In `xmb.js`, change the `CONFIG` object:
@@ -39,7 +39,7 @@ In `styles.css`, change variables in `:root`:
   - Vertical wheel moves section flow; handles boundary snapping.
 
 ### JS-disabled fallback
-- Panels remain stacked and readable (`noscript` style in `Index.html`).
+- Panels remain stacked and readable (`noscript` style in `index.html`).
 - Users can navigate with normal page scrolling and links.
 
 ### Manual acceptance checklist
