@@ -14,21 +14,61 @@ const translations = {
         nl: 'Terug naar Menu'
     },
     navHintDesktop: {
-        en: 'Use arrow keys or click to navigate • Press Enter for details',
-        pt: 'Use as setas ou clique para navegar • Pressione Enter para detalhes',
-        nl: 'Gebruik pijltjestoetsen of klik om te navigeren • Druk op Enter voor details'
+        en: 'Use arrows or click to navigate • Click an item for details',
+        pt: 'Use as setas ou clique para navegar • Clique em um item para detalhes',
+        nl: 'Gebruik pijlen of klik om te navigeren • Klik op een item voor details'
     },
     navHintMobile: {
-        en: 'Swipe or tap to navigate • Tap twice for details',
-        pt: 'Deslize ou toque para navegar • Toque duas vezes para detalhes',
-        nl: 'Veeg of tik om te navigeren • Tik twee keer voor details'
+        en: 'Use arrows or swipe to navigate • Click an item for details',
+        pt: 'Use as setas ou deslize para navegar • Clique em um item para detalhes',
+        nl: 'Gebruik pijlen of veeg om te navigeren • Klik op een item voor details'
+    },
+    navHintKeyboard: {
+        en: 'Arrows navigate • Enter opens • Escape returns',
+        pt: 'Setas navegam • Enter abre • Escape volta',
+        nl: 'Pijlen navigeren • Enter opent • Escape gaat terug'
+    },
+    previousCategory: {
+        en: 'Previous category',
+        pt: 'Categoria anterior',
+        nl: 'Vorige categorie'
+    },
+    nextCategory: {
+        en: 'Next category',
+        pt: 'Próxima categoria',
+        nl: 'Volgende categorie'
+    },
+    previousItem: {
+        en: 'Previous item',
+        pt: 'Item anterior',
+        nl: 'Vorig item'
+    },
+    nextItem: {
+        en: 'Next item',
+        pt: 'Próximo item',
+        nl: 'Volgend item'
+    },
+    categoryLabel: {
+        en: 'Category',
+        pt: 'Categoria',
+        nl: 'Categorie'
+    },
+    itemLabel: {
+        en: 'Item',
+        pt: 'Item',
+        nl: 'Item'
+    },
+    navigationBoundary: {
+        en: 'You are at the edge of this list.',
+        pt: 'Você está no limite desta lista.',
+        nl: 'Je bent aan het einde van deze lijst.'
     }
 };
 
 // Portfolio data with translations
 const menuData = [
     {
-        title: { en: 'About', pt: 'Sobre', nl: 'Over' },
+        title: { en: 'About Me', pt: 'Sobre Mim', nl: 'Over Mij' },
         icon: 'user',
         items: [
             {
@@ -68,23 +108,23 @@ const menuData = [
         icon: 'briefcase',
         items: [
             {
-                title: { en: 'Tower of Babell', pt: 'Tower of Babell', nl: 'Tower of Babell' },
+                title: { en: 'Tower of Babel', pt: 'Tower of Babel', nl: 'Tower of Babel' },
                 description: { en: 'Unity • C#', pt: 'Unity • C#', nl: 'Unity • C#' },
                 content: { en: 'A core project with gameplay iteration and systems design.', pt: 'Projeto central com iteracao de gameplay e design de sistemas.', nl: 'Kernproject met gameplay-iteratie en systems design.' },
                 detailContent: {
-                    en: 'Tower of Babell is one of my main Unity projects. I focused on balancing mechanics, improving flow, and refining player feedback. The project helped me deepen my understanding of reusable gameplay systems and rapid iteration.',
-                    pt: 'Tower of Babell e um dos meus principais projetos em Unity. Foquei em balancear mecanicas, melhorar o fluxo e refinar o feedback ao jogador. O projeto me ajudou a aprofundar sistemas reutilizaveis e iteracao rapida.',
-                    nl: 'Tower of Babell is een van mijn belangrijkste Unity-projecten. Ik focuste op balancing, flow en player feedback. Het project hielp mij om herbruikbare gameplay-systemen en snelle iteratie te verdiepen.'
+                    en: 'Tower of Babel is one of my main Unity projects. I focused on balancing mechanics, improving flow, and refining player feedback. The project helped me deepen my understanding of reusable gameplay systems and rapid iteration.',
+                    pt: 'Tower of Babel e um dos meus principais projetos em Unity. Foquei em balancear mecanicas, melhorar o fluxo e refinar o feedback ao jogador. O projeto me ajudou a aprofundar sistemas reutilizaveis e iteracao rapida.',
+                    nl: 'Tower of Babel is een van mijn belangrijkste Unity-projecten. Ik focuste op balancing, flow en player feedback. Het project hielp mij om herbruikbare gameplay-systemen en snelle iteratie te verdiepen.'
                 }
             },
             {
-                title: { en: 'Arthurs Playground', pt: 'Arthurs Playground', nl: 'Arthurs Playground' },
-                description: { en: 'Unity • C#', pt: 'Unity • C#', nl: 'Unity • C#' },
-                content: { en: 'Experimental sandbox for mechanics and prototypes.', pt: 'Sandbox experimental para mecanicas e prototipos.', nl: 'Experimentele sandbox voor mechanics en prototypes.' },
+                title: { en: 'DoomLikeShooter', pt: 'DoomLikeShooter', nl: 'DoomLikeShooter' },
+                description: { en: 'C++ • SFML 2.x', pt: 'C++ • SFML 2.x', nl: 'C++ • SFML 2.x' },
+                content: { en: 'A raycasting first-person shooter built from core C++ systems.', pt: 'Um first-person shooter de raycasting construido com sistemas centrais em C++.', nl: 'Een raycasting first-person shooter gebouwd met C++-kernsystemen.' },
                 detailContent: {
-                    en: 'Arthurs Playground is my experimentation space. I quickly test movement systems, interaction loops, and small gameplay ideas before integrating them into larger projects.',
-                    pt: 'Arthurs Playground e meu espaco de experimentacao. Testo rapidamente sistemas de movimento, loops de interacao e pequenas ideias antes de integrar em projetos maiores.',
-                    nl: 'Arthurs Playground is mijn experimenteerruimte. Ik test hier snel movement systems, interaction loops en kleine gameplay-ideeen voordat ze naar grotere projecten gaan.'
+                    en: 'DoomLikeShooter is a C++ and SFML raycasting prototype focused on making first-person rendering understandable and inspectable. It combines grid maps, collision-aware movement, DDA traversal, wall projection, weapon selection, and procedural muzzle flash feedback.',
+                    pt: 'DoomLikeShooter e um prototipo de raycasting em C++ e SFML focado em tornar a renderizacao em primeira pessoa compreensivel e facil de analisar. Ele combina mapas em grid, movimento com colisao, percurso DDA, projecao de paredes, selecao de armas e feedback procedural de muzzle flash.',
+                    nl: 'DoomLikeShooter is een C++- en SFML-raycastingprototype dat first-person rendering begrijpelijk en inspecteerbaar maakt. Het combineert gridkaarten, botsingsbewuste beweging, DDA-traversal, muurprojectie, wapenkeuze en procedurele muzzle-flash-feedback.'
                 }
             },
             {
@@ -119,12 +159,12 @@ const menuData = [
             },
             {
                 title: { en: 'Fractured', pt: 'Fractured', nl: 'Fractured' },
-                description: { en: 'Unity • Combat prototype', pt: 'Unity • Protótipo de combate', nl: 'Unity • Combat prototype' },
-                content: { en: 'Action-focused prototype with combat and feedback loops.', pt: 'Protótipo focado em acao com combate e feedback.', nl: 'Action prototype met combat en feedback loops.' },
+                description: { en: 'Unity 6.2 • Physics and destruction systems', pt: 'Unity 6.2 • Sistemas de fisica e destruicao', nl: 'Unity 6.2 • Physics- en destructiesystemen' },
+                content: { en: 'A physics-driven interaction system built around launching, momentum, and destructible environments.', pt: 'Um sistema de interacao baseado em fisica, lancamento, momentum e ambientes destrutiveis.', nl: 'Een physics-gedreven interactiesysteem rond lanceren, momentum en destructieve omgevingen.' },
                 detailContent: {
-                    en: 'Fractured focuses on combat pacing, enemy behavior, and player feedback. I iterated heavily on hit response and movement feel to make the gameplay rewarding.',
-                    pt: 'Fractured foca em ritmo de combate, comportamento de inimigos e feedback ao jogador. Iterei bastante em resposta de impacto e sensacao de movimento.',
-                    nl: 'Fractured focust op combat pacing, enemy behavior en player feedback. Ik heb veel geitereerd op hit response en movement feel.'
+                    en: 'Fractured is a physics-based Unity game where the player launches a character through an interactive environment, using momentum to break walls and shatter glass.',
+                    pt: 'Fractured e um jogo de fisica em Unity onde o jogador lanca um personagem por um ambiente interativo, usando momentum para quebrar paredes e vidro.',
+                    nl: 'Fractured is een physics-game in Unity waarin de speler een personage door een interactieve omgeving lanceert en momentum gebruikt om muren en glas te breken.'
                 }
             },
             {
@@ -223,6 +263,56 @@ const menuData = [
     }
 ];
 
+const aboutCategory = menuData.find((category) => category.title.en === 'About Me');
+const projectsCategory = menuData.find((category) => category.title.en === 'Projects');
+const cvCategoryIndex = menuData.findIndex((category) => category.title.en === 'CV');
+const cvCategory = cvCategoryIndex >= 0 ? menuData[cvCategoryIndex] : null;
+
+if (projectsCategory) {
+    const completedProjects = new Set([
+        'Tower of Babel',
+        'DoomLikeShooter',
+        'TowerDefense',
+        'Small C++ Games',
+        'Fractured'
+    ]);
+    projectsCategory.items = projectsCategory.items.filter((item) => completedProjects.has(item.title.en));
+}
+
+if (aboutCategory && cvCategory) {
+    aboutCategory.items.push(...cvCategory.items);
+    menuData.splice(cvCategoryIndex, 1);
+}
+
+if (aboutCategory) {
+    const aboutItems = aboutCategory.items;
+    const localizedDetailContent = ['en', 'pt', 'nl'].reduce((content, language) => {
+        content[language] = aboutItems
+            .map((item) => item.detailContent[language])
+            .join('\n\n');
+        return content;
+    }, {});
+
+    aboutCategory.items = [{
+        title: { en: 'Who I am', pt: 'Quem sou eu', nl: 'Wie ik ben' },
+        description: {
+            en: 'Gameplay and tool developer from Rio, based in Amsterdam',
+            pt: 'Desenvolvedor de gameplay e ferramentas do Rio, vivendo em Amsterdam',
+            nl: 'Gameplay- en toolontwikkelaar uit Rio, woonachtig in Amsterdam'
+        },
+        content: {
+            en: 'A practical game developer who enjoys turning ideas into responsive, readable mechanics.',
+            pt: 'Um desenvolvedor de jogos pratico que gosta de transformar ideias em mecanicas claras e responsivas.',
+            nl: 'Een praktische game developer die graag ideeen omzet in duidelijke en responsieve mechanics.'
+        },
+        detailContent: localizedDetailContent
+    }];
+}
+
+function isProjectsCategory(categoryIndex) {
+    return menuData[categoryIndex]?.title.en === 'Projects';
+}
+
 // SVG Icons
 const icons = {
     user: '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/>',
@@ -243,18 +333,19 @@ const itemIcons = {
 };
 
 function getItemIconFor(catIdx, itemTitleEn) {
-    if (catIdx === 1) return itemIcons.disk;
-    if (catIdx === 2) return itemIcons.folder;
+    if (isProjectsCategory(catIdx)) return itemIcons.disk;
 
-    if (catIdx === 3) {
+    if (menuData[catIdx]?.title.en === 'Contact') {
         if (itemTitleEn === 'Email') return itemIcons.mail;
         if (itemTitleEn === 'GitHub') return itemIcons.github;
         return itemIcons.social;
     }
 
-    if (catIdx === 0) {
+    if (menuData[catIdx]?.title.en === 'About Me') {
         if (itemTitleEn === 'Introduction') return itemIcons.info;
         if (itemTitleEn === 'Education') return itemIcons.book;
+        if (itemTitleEn === 'Work Experience') return itemIcons.briefcase;
+        if (itemTitleEn === 'Technical Skills') return itemIcons.code;
         return itemIcons.target;
     }
 
@@ -263,17 +354,212 @@ function getItemIconFor(catIdx, itemTitleEn) {
 
 // Original detailed project information + GitHub links
 const PROJECT_DETAIL_INFO = {
-    'Tower of Babell': {
+    'Tower of Babel': {
         github: 'https://github.com/zmbfiedk/BO1.4/tree/dev',
-        detailed: 'Sprint 0 - Game Design Document : Tower Of Babel\n\nNaam: Rubin\nKlas: GD1B\nDatum: 13/04/2026\n\n1. Titel en elevator pitch\n\nTitel: Tower Of Babel\n\nElevator pitch (maximaal twee zinnen):\nTower Of Babel is a wave-based hack and slash game where players fight increasingly stronger enemies. Every 10 waves both the enemies and the player become stronger, creating a scaling challenge.\n\n2. Wat maakt jouw game uniek\n\nThe game focuses on precise combat mechanics like dodge rolls, sprinting, and a 2-step combat system. Combined with multiple weapons, the player is constantly adapting their playstyle.\n\n3. Scope\nWave-based combat system\n3 weapons\nMultiple enemy types\nBoss at wave 50\nSimple arena level\n4. Mechanics\nCombat system (attack, parry, dodge)\nStamina system\nWeapon switching\nEnemy AI\nWave system\n5. Gameplay loop\nFight enemies\nAvoid damage\nDefeat wave\nGain strength\nRepeat\nDefeat boss\n6. Progressie\nEvery 10 waves:\nPlayer damage increases\nEnemies scale in strength\n7. Risico\'s en oplossingen\nBalancing issues -> playtesting\nCombat too hard -> adjust stamina/damage\nScaling too extreme -> tune values\n8. Planning\nSprint 1: Core combat\nSprint 2: Enemy systems\nSprint 3: Weapons\nSprint 4: Progression\nSprint 5: Boss\nSprint 6: Polish\n9. Inspiratie\nHack and slash games\nWave survival games\n10. Technisch ontwerp mini\nCombat system -> input + cooldowns\nEnemy AI -> state system\nWaves -> spawn system'
+        detailed: 'Sprint 0 - Game Design Document : Tower Of Babel\n\nNaam: Rubin\nKlas: GD1B\nDatum: 13/04/2026\n\n1. Titel en elevator pitch\n\nTitel: Tower Of Babel\n\nElevator pitch (maximaal twee zinnen):\nTower Of Babel is a wave-based hack and slash game where players fight increasingly stronger enemies. Every 10 waves both the enemies and the player become stronger, creating a scaling challenge.\n\n2. Wat maakt jouw game uniek\n\nThe game focuses on precise combat mechanics like dodge rolls, sprinting, and a 2-step combat system. Combined with multiple weapons, the player is constantly adapting their playstyle.\n\n3. Scope\nWave-based combat system\n3 weapons\nMultiple enemy types\nBoss at wave 50\nSimple arena level\n4. Mechanics\nCombat system (attack, parry, dodge)\nStamina system\nWeapon switching\nEnemy AI\nWave system\n5. Gameplay loop\nFight enemies\nAvoid damage\nDefeat wave\nGain strength\nRepeat\nDefeat boss\n6. Progressie\nEvery 10 waves:\nPlayer damage increases\nEnemies scale in strength\n7. Risico\'s en oplossingen\nBalancing issues -> playtesting\nCombat too hard -> adjust stamina/damage\nScaling too extreme -> tune values\n8. Planning\nSprint 1: Core combat\nSprint 2: Enemy systems\nSprint 3: Weapons\nSprint 4: Progression\nSprint 5: Boss\nSprint 6: Polish\n9. Inspiratie\nHack and slash games\nWave survival games\n10. Technisch ontwerp mini\nCombat system -> input + cooldowns\nEnemy AI -> state system\nWaves -> spawn system',
+        caseStudy: {
+            intro: 'A wave-based hack-and-slash prototype built around precise combat, escalating pressure, and readable enemy systems.',
+            stats: [
+                { value: '50', label: 'Boss wave' },
+                { value: '10', label: 'Wave scaling interval' },
+                { value: '3', label: 'Weapons in scope' }
+            ],
+            sections: [
+                {
+                    title: 'Core loop',
+                    text: 'Fight enemies, avoid damage, defeat the wave, grow stronger, and repeat until the boss encounter. Dodge rolls, sprinting, parrying, and weapon switching keep each wave active and reactive.'
+                },
+                {
+                    title: 'Systems focus',
+                    text: 'The design connects player control, enemy states, damage flow, spawning, wave progression, and boss behavior into a readable combat framework that can be tuned through playtesting.'
+                },
+                {
+                    title: 'Progression & risks',
+                    text: 'Every 10 waves, player damage and enemy strength increase. The main balancing risks are combat becoming too demanding or scaling becoming too extreme, addressed through stamina, damage, and pacing adjustments.'
+                },
+                {
+                    title: 'Combat identity',
+                    text: 'Tower of Babel is designed as a precise hack-and-slash experience. The player reads enemy tells, chooses between attacking, parrying, or dodging, and manages stamina so every decision has a cost.'
+                },
+                {
+                    title: 'Enemy roles',
+                    text: 'Different enemy types create layered pressure: melee enemies contest space, ranged enemies punish predictable movement, and the boss changes behavior based on distance and attack timing.'
+                },
+                {
+                    title: 'Production plan',
+                    text: 'The project is organized into six focused sprints: core combat, enemy systems, weapons, progression, boss implementation, and polish. Playtesting drives balance decisions throughout the process.'
+                }
+            ],
+            codeSnippets: [
+                {
+                    title: 'Player movement + stamina',
+                    language: 'C#',
+                    source: 'Move.cs',
+                    explanation: 'Reads four-direction input, normalizes movement, changes speed while sprinting, and drains stamina without allowing it to become negative.',
+                    code: 'void HandleMovement()\n{\n    float horizontal = Input.GetAxisRaw("Horizontal");\n    float vertical = Input.GetAxisRaw("Vertical");\n    moveDirection = new Vector2(horizontal, vertical).normalized;\n\n    if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)\n    {\n        currentSpeed = sprintSpeed;\n        stamina -= staminaDrain * Time.deltaTime;\n    }\n\n    stamina = Mathf.Clamp(stamina, 0f, 100f);\n    rb.velocity = moveDirection * currentSpeed;\n}'
+                },
+                {
+                    title: 'Dodge routine',
+                    language: 'C#',
+                    source: 'Move.cs',
+                    explanation: 'Temporarily disables the player collider during a short dash, making dodging an escape tool rather than a permanent movement state.',
+                    code: 'IEnumerator DodgeRoutine()\n{\n    isDodging = true;\n    BC2D.enabled = false;\n    currentSpeed = dashSpeed;\n    yield return new WaitForSeconds(0.05f);\n    currentSpeed = moveSpeed;\n    BC2D.enabled = true;\n    isDodging = false;\n}'
+                },
+                {
+                    title: 'Melee attack window',
+                    language: 'C#',
+                    source: 'EnemyMeleeAttack.cs',
+                    explanation: 'Matches the damage hitbox to the animation timing, so the enemy can only damage the player during the active attack window.',
+                    code: 'private IEnumerator AttackRoutine()\n{\n    canAttack = false;\n    animator.SetTrigger("Attack");\n    attackHitbox.enabled = true;\n    yield return new WaitForSeconds(attackDuration);\n    attackHitbox.enabled = false;\n    yield return new WaitForSeconds(attackCooldown);\n    canAttack = true;\n}'
+                },
+                {
+                    title: 'Wave event counting',
+                    language: 'C#',
+                    source: 'WaveCheckerN.cs',
+                    explanation: 'Connects spawn and death events to the wave manager, allowing progression counters to update without searching for every enemy each frame.',
+                    code: 'void Start()\n{\n    EnemySpawnerN.OnEnemySpawn += CountEnemy;\n    Takedamage.onDeath += OnEnemyDeath;\n}\n\nprivate void CountEnemy()\n{\n    enemyAmmount++;\n    enemiesSpawnedThisWave++;\n}'
+                }
+            ],
+            diagrams: [
+                { file: '01-system-overview.png', title: 'System overview', caption: 'How the core managers and combat systems connect.' },
+                { file: '02-player-control.png', title: 'Player control', caption: 'The input and state flow behind movement and combat.' },
+                { file: '03-enemy-comparison.png', title: 'Enemy comparison', caption: 'Contrasting enemy roles, pressure, and behavior.' },
+                { file: '04-enemy-melee-timeline.png', title: 'Melee enemy timeline', caption: 'A readable sequence for close-range enemy attacks.' },
+                { file: '05-ranged-line-of-sight.png', title: 'Ranged line of sight', caption: 'The decision flow for ranged enemy targeting.' },
+                { file: '06-enemy-damage-flow.png', title: 'Enemy damage flow', caption: 'Damage processing from hit detection to enemy response.' },
+                { file: '07-spawner-pipeline.png', title: 'Spawner pipeline', caption: 'How enemy spawning is prepared, executed, and tracked.' },
+                { file: '08-wave-lifecycle.png', title: 'Wave lifecycle', caption: 'The full lifecycle from wave start to completion.' },
+                { file: '09-boss-distance-states.png', title: 'Boss distance states', caption: 'Boss behavior changes based on distance to the player.' },
+                { file: '10-boss-attack-timeline.png', title: 'Boss attack timeline', caption: 'Telegraphed boss attacks create windows for response.' },
+                { file: '11-boss-health-ui.png', title: 'Boss health UI', caption: 'A focused health presentation for the final encounter.' },
+                { file: '12-normal-vs-boss-wave.png', title: 'Normal vs boss wave', caption: 'A comparison of regular wave pressure and boss pacing.' }
+            ]
+        }
     },
-    'Arthurs Playground': {
+    'DoomLikeShooter': {
         github: '#',
-        detailed: 'Arthurs Playground is my experimental sandbox for rapid gameplay prototyping. I use it to quickly validate mechanics before moving them into larger projects.\n\nProcess focus:\n- Test movement variants and combat feel quickly\n- Build throwaway prototypes to find strong loops\n- Validate player feedback and readability early\n- Reuse successful modules in bigger games'
+        detailed: 'DoomLikeShooter\n\nProject snapshot\nA small, understandable first-person rendering prototype built with C++ and SFML 2.x. The project focuses on the underlying systems instead of a large content pipeline.\n\nCore systems\n- Grid-based map validation and collision-aware movement\n- Camera-space ray generation and DDA grid traversal\n- Per-column wall projection with distance and surface-orientation shading\n- Weapon selection, sprite rendering, fire-rate control, and procedural muzzle flash feedback\n\nProject goals\n- Represent an editable level as a simple grid\n- Convert player position and rotation into camera rays\n- Traverse the grid until each ray finds a wall\n- Turn wall distance into screen height and brightness\n- Keep each system small enough to understand, debug, and extend\n\nTechnology\n- C++\n- SFML 2.x\n- Visual Studio 2022\n- MSVC v143\n- x64 Windows build configuration',
+        caseStudy: {
+            intro: 'A compact raycasting first-person shooter prototype that exposes the rendering, movement, collision, and weapon systems behind the experience.',
+            stats: [
+                { value: 'C++', label: 'Core language' },
+                { value: 'DDA', label: 'Ray traversal' },
+                { value: 'SFML', label: 'Window and rendering layer' }
+            ],
+            sections: [
+                {
+                    title: 'Rendering pipeline',
+                    text: 'The camera combines the player forward direction with a camera plane to generate one ray per screen column. DDA grid traversal finds wall intersections, then distance and surface orientation determine each projected wall strip.'
+                },
+                {
+                    title: 'Movement and collision',
+                    text: 'The map validates rows, tiles, and the player start before gameplay begins. The player is treated as a circle, while horizontal and vertical movement are resolved separately to produce reliable wall sliding without corner clipping.'
+                },
+                {
+                    title: 'Interaction layer',
+                    text: 'A playable loop sits on top of the renderer: keyboard input updates movement and rotation, shooting uses fire-rate timing, weapon selection changes the held sprite, and a procedural muzzle flash gives firing immediate feedback.'
+                }
+            ],
+            codeSnippets: [
+                {
+                    title: 'Camera ray generation',
+                    language: 'C++',
+                    source: 'Raycaster::CastRay',
+                    explanation: 'Builds a ray from player direction, camera plane, and horizontal screen position before stepping through the map.',
+                    code: 'const float cameraX = 2.0f * screenX / screenWidth - 1.0f;\nconst float rayDirectionX = directionX + planeX * cameraX;\nconst float rayDirectionY = directionY + planeY * cameraX;'
+                },
+                {
+                    title: 'Collision-aware movement',
+                    language: 'C++',
+                    source: 'Player::TryMove',
+                    explanation: 'Checks the proposed position against the map before applying movement, keeping the player from clipping through blocking tiles.',
+                    code: 'void Player::TryMove(float deltaX, float deltaY)\n{\n    const float newX = m_x + deltaX;\n    const float newY = m_y + deltaY;\n\n    if (m_map.CanOccupy(newX, newY, m_radius))\n    {\n        m_x = newX;\n        m_y = newY;\n    }\n}'
+                },
+                {
+                    title: 'DDA grid stepping',
+                    language: 'C++',
+                    source: 'Raycaster::CastRay',
+                    explanation: 'Advances to the nearest vertical or horizontal grid boundary until the ray reaches a non-walkable tile.',
+                    code: 'for (int steps = 0; steps < maximumSteps; ++steps)\n{\n    if (sideDistanceX < sideDistanceY)\n    {\n        sideDistanceX += deltaDistanceX;\n        mapX += stepX;\n        verticalWall = true;\n    }\n    else\n    {\n        sideDistanceY += deltaDistanceY;\n        mapY += stepY;\n        verticalWall = false;\n    }\n}'
+                }
+            ],
+            imagePath: 'Files/DoomLikeShooterC++/Images',
+            diagrams: [
+                { file: '01-title-identity.png', title: 'Title identity', caption: 'The project identity for the raycasting shooter.' },
+                { file: '02-map-to-space.png', title: 'Map to space', caption: 'A grid map becomes navigable first-person space.' },
+                { file: '03-movement-collision.png', title: 'Movement and collision', caption: 'Circle-based collision keeps movement grounded in the map.' },
+                { file: '04-dda-traversal.png', title: 'DDA traversal', caption: 'Grid stepping finds wall intersections efficiently.' },
+                { file: '05-column-rendering.png', title: 'Column rendering', caption: 'Wall hits become vertical screen columns.' },
+                { file: '06-weapon-selection.png', title: 'Weapon selection', caption: 'Weapon selection adds interaction to the renderer.' },
+                { file: '07-muzzle-flash.png', title: 'Muzzle flash', caption: 'Procedural firing feedback reinforces the weapon response.' },
+                { file: '08-closing-hero.png', title: 'Closing view', caption: 'The complete prototype brings the systems together.' }
+            ]
+        }
     },
     'TowerDefense': {
         github: 'https://github.com/zmbfiedk/Tower-Defense',
-        detailed: 'Sprint 0 - Game Design Document: Dragon Defense\nName: Arthur | Class: GD1B | Date: 08/09/2025\n\nDragon Defense is a tower defense game designed to avoid repetitive meta play. Every 10 waves the towers must be swapped, forcing strategic adaptation.\n\nFull project info:\n- 6 tower archetypes: Fast, Slow, Long Range, Short Range, Freeze, Flame\n- 5 enemy types + boss waves every 10 rounds\n- Dynamic progression: HP +10% per wave, speed +5% per wave, reward scaling\n- Grid-based placement and waypoint pathing system\n- Economy loop with building, upgrades, and strategic replacement\n\nTechnical process:\n- Sprint 1-5 roadmap from core loop to polish and boss logic\n- Event-driven architecture connecting Player, Tower, Enemy, Wave, UI, and Music managers\n- Dedicated balancing cycles for tower identity, enemy pressure, and fairness'
+        detailed: 'Sprint 0 - Game Design Document: Dragon Defense\nName: Arthur | Class: GD1B | Date: 08/09/2025\n\nDragon Defense is a tower defense game designed to avoid repetitive meta play. Every 10 waves the towers must be swapped, forcing strategic adaptation.\n\nFull project info:\n- 6 tower archetypes: Fast, Slow, Long Range, Short Range, Freeze, Flame\n- 5 enemy types + boss waves every 10 rounds\n- Dynamic progression: HP +10% per wave, speed +5% per wave, reward scaling\n- Grid-based placement and waypoint pathing system\n- Economy loop with building, upgrades, and strategic replacement\n\nTechnical process:\n- Sprint 1-5 roadmap from core loop to polish and boss logic\n- Event-driven architecture connecting Player, Tower, Enemy, Wave, UI, and Music managers\n- Dedicated balancing cycles for tower identity, enemy pressure, and fairness',
+        caseStudy: {
+            intro: 'A tactical tower defense prototype built around forced adaptation, readable placement rules, and wave systems that keep the player changing their strategy.',
+            stats: [
+                { value: '10', label: 'Wave tower swap' },
+                { value: '6', label: 'Tower archetypes' },
+                { value: '5 + boss', label: 'Enemy roles' }
+            ],
+            sections: [
+                {
+                    title: 'Core loop',
+                    text: 'Earn gold, place towers on valid grid cells, survive incoming enemies, and reinvest rewards into upgrades or replacement towers. Every tenth wave forces a new tower selection so one dominant build cannot carry the entire run.'
+                },
+                {
+                    title: 'Tower identity',
+                    text: 'Fast, Slow, Long Range, Short Range, Freeze, and Flame towers create distinct answers to enemy pressure. Their costs, ranges, and effects give placement and replacement decisions a clear strategic tradeoff.'
+                },
+                {
+                    title: 'Enemy pressure',
+                    text: 'Enemy roles are designed to challenge different parts of the defense. Regular waves build pressure through varied movement and durability, while boss waves every ten rounds create a stronger test of preparation and economy.'
+                },
+                {
+                    title: 'Adaptive progression',
+                    text: 'Enemy health increases by 10 percent per wave and speed increases by 5 percent. Rewards scale with the challenge so the economy keeps pace while still making missed placements and poor upgrades costly.'
+                },
+                {
+                    title: 'Pathing and placement',
+                    text: 'Enemies follow waypoint paths toward the base, while the grid validates tower placement before a build is accepted. This keeps the battlefield legible and makes range coverage, blocked cells, and route pressure visible to the player.'
+                },
+                {
+                    title: 'Event-driven architecture',
+                    text: 'Player, Tower, Enemy, Wave, UI, and Music managers communicate through gameplay events. Spawning, enemy deaths, wave completion, purchases, upgrades, and boss transitions can therefore be tuned without tightly coupling every system.'
+                }
+            ],
+            codeSnippets: [
+                {
+                    title: 'Wave event tracking',
+                    language: 'C#',
+                    source: 'WaveManager.cs',
+                    explanation: 'Uses spawn and death events to track the active wave without searching the scene for every enemy each frame.',
+                    code: 'private void OnEnable()\n{\n    EnemySpawner.OnEnemySpawn += HandleEnemySpawn;\n    Enemy.OnEnemyDefeated += HandleEnemyDefeated;\n}\n\nprivate void HandleEnemyDefeated(Enemy enemy)\n{\n    activeEnemies--;\n    if (activeEnemies == 0 && spawnQueue.Count == 0)\n        CompleteWave();\n}'
+                },
+                {
+                    title: 'Adaptive enemy scaling',
+                    language: 'C#',
+                    source: 'DifficultySettings.cs',
+                    explanation: 'Applies the documented health and speed progression so later waves increase pressure in predictable steps.',
+                    code: 'float waveMultiplier = Mathf.Pow(1.10f, waveNumber - 1);\nfloat speedMultiplier = Mathf.Pow(1.05f, waveNumber - 1);\n\nenemy.maxHealth *= waveMultiplier;\nenemy.moveSpeed *= speedMultiplier;\nenemy.reward = baseReward + waveNumber * rewardStep;'
+                },
+                {
+                    title: 'Waypoint movement',
+                    language: 'C#',
+                    source: 'EnemyPath.cs',
+                    explanation: 'Moves each enemy through the shared waypoint route and signals the base when the final point is reached.',
+                    code: 'void Update()\n{\n    Transform target = waypoints[currentWaypoint];\n    transform.position = Vector3.MoveTowards(\n        transform.position, target.position, moveSpeed * Time.deltaTime);\n\n    if (Vector3.Distance(transform.position, target.position) < 0.05f)\n        AdvanceToNextWaypoint();\n}'
+                }
+            ],
+            imagePath: 'Files/TowerDefense',
+            diagrams: [
+                { file: 'dragon-defense-sheet.png', title: 'Dragon Defense systems sheet', caption: 'Battlefield layout, placement validation, wave events, adaptive difficulty, waypoint pathing, tower and enemy roles, and the WaveManager reference in one design overview.' }
+            ]
+        }
     },
     'Godot Game': {
         github: '#',
@@ -285,7 +571,68 @@ const PROJECT_DETAIL_INFO = {
     },
     'Fractured': {
         github: 'https://github.com/MrRaven55/CheeseHeist',
-        detailed: 'Sprint 0 - Game Design Document : Fractured (Gamejam)\n\nNaam: Arthur & Joshua\nKlas: GD1B\nDatum: 13/04/2026\n\n1. Titel en elevator pitch\n\nTitel: Fractured\n\nElevator pitch (maximaal twee zinnen):\nFractured is a top-down ragdoll slingshot game where the player launches a character to break glass and reach the goal. With limited attempts, each shot matters.\n\n2. Wat maakt jouw game uniek\n\nThe game combines ragdoll physics with a top-down slingshot mechanic, creating chaotic but skill-based gameplay.\n\n3. Scope\n2 levels\nSlingshot mechanic\nGlass obstacles\nLimited attempts\nSimple UI\n4. Mechanics\nDrag & release slingshot\nRagdoll physics\nGlass breaking system\nAttempt counter\n5. Gameplay loop\nAim\nLaunch\nBreak obstacles\nRetry if needed\nReach goal\n6. Progressie\nDifficulty increases through level design\nNo complex progression (gamejam scope)\n7. Risico\'s en oplossingen\nPhysics randomness -> tune forces\nToo short -> focus on replayability\nUnclear feedback -> improve visuals\n8. Planning\nDay 1: Core mechanic\nDay 2: Physics\nDay 3: Gameplay systems\nDay 4: Levels\nDay 5: Polish\n9. Inspiratie\nSlingshot games\nPhysics-based games\n10. Technisch ontwerp mini\nSlingshot -> force calculation\nRagdoll -> joints\nGlass -> break threshold'
+        detailed: 'Fractured is a Unity physics game built around launching a player character through an interactive environment. I implemented the player controller and the main destruction interactions: breaking walls and shattering glass.\n\nMy contribution\n- Built the player launch mechanic using a drag-and-release slingshot interaction.\n- Converted screen-space mouse input into a world-space position using a camera ray and horizontal plane.\n- Added launch force clamping, air drag, rest detection, and re-arming of the player.\n- Added a lives system connected to the GameManager UI.\n- Implemented player death, including a final launch impulse, audio, collider shutdown, and delayed destruction.\n- Built impact-based wall destruction using a configurable collision-speed threshold.\n- Implemented glass shattering by switching child glass fragments from kinematic to dynamic rigidbodies.\n- Added sound effects to launching, death, wall breaking, and glass breaking.\n\nTechnical approach\nThe player remains kinematic while aiming, then receives a clamped velocity change on release. Walls use pre-fractured pieces that stay kinematic until impact speed crosses a threshold. Glass uses the same authored-fragment approach but breaks immediately on player collision. State guards prevent repeated launches, death events, and wall breaks.\n\nPortfolio summary\nI designed and implemented a physics-driven interaction loop combining input handling, camera-to-world projection, Rigidbody forces, collision analysis, state management, audio feedback, and UI integration. The goal was to make the physics readable: pull distance affects launch power, impact speed determines whether a wall breaks, and released fragments make destruction visible and tactile.',
+        caseStudy: {
+            intro: 'A physics-driven interaction system where the player launches through the level and uses momentum to interact with destructible environments.',
+            stats: [
+                { value: 'Unity 6.2', label: 'Engine' },
+                { value: '3', label: 'Core systems' },
+                { value: 'C#', label: 'Language' }
+            ],
+            sections: [
+                {
+                    title: 'Player launch system',
+                    text: 'A drag-and-release slingshot converts screen-space input into a world-space position on a horizontal plane. Pull distance is clamped, launch force is capped, and the player is only re-armed after linear and angular motion remain below rest thresholds.'
+                },
+                {
+                    title: 'Impact-based wall breaking',
+                    text: 'Pre-fractured wall pieces remain kinematic while intact. When collision speed crosses a configurable threshold, the pieces become dynamic, receive explosion force from the impact point, and the main collider is disabled.'
+                },
+                {
+                    title: 'Glass shatter interaction',
+                    text: 'Player collision releases authored glass fragments by switching their rigidbodies from kinematic to dynamic and enabling gravity. The immediate response gives glass a different gameplay identity from threshold-based wall destruction.'
+                },
+                {
+                    title: 'State and feedback',
+                    text: 'Launch, death, wall break, and glass break each connect to audio feedback. Lives are routed through GameManager, while state guards prevent repeated launches, duplicate breaks, and input after death.'
+                },
+                {
+                    title: 'Technical decisions',
+                    text: 'Kinematic fragments avoid unnecessary physics simulation while objects are intact. Configurable Inspector fields expose stretch, force, thresholds, explosion radius, audio volume, and destruction delay for fast balancing.'
+                },
+                {
+                    title: 'My contribution',
+                    text: 'I designed and implemented the player launch controller, lives and death behavior, impact-based wall breaking, glass shattering, Rigidbody state changes, and interaction audio feedback.'
+                }
+            ],
+            codeSnippets: [
+                {
+                    title: 'Player launch force',
+                    language: 'C#',
+                    source: 'PlayerControls',
+                    explanation: 'Clamps pull distance and launch force so player input stays readable and predictable for level design.',
+                    code: 'Vector3 launchDirection =\n    (slingshotAnchor - transform.position).normalized;\nfloat calculatedForce = pullMagnitude * launchForceMultiplier * speed;\nfloat finalForce = Mathf.Min(calculatedForce, maxLaunchForce);\nrb.AddForce(launchDirection * finalForce, ForceMode.VelocityChange);'
+                },
+                {
+                    title: 'Impact-based wall breaking',
+                    language: 'C#',
+                    source: 'WallBreaker',
+                    explanation: 'Only releases wall fragments when the collision is fast enough to cross the configured break threshold.',
+                    code: 'float impactSpeed = collision.relativeVelocity.magnitude;\nif (impactSpeed >= breakSpeedThreshold)\n{\n    Vector3 impactPoint = collision.contacts[0].point;\n    Break(impactPoint);\n}'
+                },
+                {
+                    title: 'Glass shatter interaction',
+                    language: 'C#',
+                    source: 'GlassBreaker',
+                    explanation: 'Player collision releases the authored glass pieces and disables the intact collider for an immediate break response.',
+                    code: 'if (!collision.gameObject.CompareTag("Player"))\n    return;\n\nforeach (Rigidbody piece in GlassPieces)\n{\n    piece.isKinematic = false;\n    piece.useGravity = true;\n}\nCollider.enabled = false;'
+                }
+            ],
+            imagePath: 'Files/Fractured',
+            diagrams: [
+                { file: 'fracturedih-portfolio-sheet.png', title: 'Physics and destruction systems', caption: 'The complete project overview: player launch, impact-based wall breaking, glass shattering, technical decisions, and contribution.' }
+            ]
+        }
     },
     'Roguelike Action Platformer': {
         github: 'https://github.com/zmbfiedk/RogueLikeActionPlatformer',
@@ -326,13 +673,99 @@ function getProjectDetailText(projectInfo) {
     return normalizeDetailTextToEnglish(rawDetailed || '');
 }
 
+function renderProjectCaseStudy(detailPageContent, caseStudy) {
+    detailPageContent.classList.add('project-case-study');
+    detailPageContent.innerHTML = `
+        <div class="case-study-intro">
+            <p>${caseStudy.intro}</p>
+        </div>
+        <div class="case-study-stats">
+            ${caseStudy.stats.map((stat) => `
+                <div class="case-study-stat">
+                    <strong>${stat.value}</strong>
+                    <span>${stat.label}</span>
+                </div>
+            `).join('')}
+        </div>
+        <div class="case-study-sections">
+            ${caseStudy.sections.map((section) => `
+                <section class="case-study-section">
+                    <h2>${section.title}</h2>
+                    <p>${section.text}</p>
+                </section>
+            `).join('')}
+        </div>
+        <section class="code-section">
+            <div class="diagram-section-heading">
+                <div>
+                    <p class="eyebrow">Technical direction</p>
+                    <h2>Systems in code</h2>
+                </div>
+                <span class="diagram-count">Representative ${caseStudy.codeSnippets[0].language} sketches</span>
+            </div>
+            <div class="code-grid">
+                ${caseStudy.codeSnippets.map((snippet) => `
+                    <article class="code-card">
+                        <div class="code-card-header">
+                            <strong>${snippet.title}</strong>
+                            <span>${snippet.source}</span>
+                            <button class="media-expand-button" type="button" data-viewer-type="code" aria-label="Open ${snippet.title} fullscreen" title="Open fullscreen">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>
+                            </button>
+                        </div>
+                        <p class="code-card-explanation">${snippet.explanation}</p>
+                        <pre><code>${snippet.code}</code></pre>
+                    </article>
+                `).join('')}
+            </div>
+        </section>
+        <section class="diagram-section">
+            <div class="diagram-section-heading">
+                <div>
+                    <p class="eyebrow">Design documentation</p>
+                    <h2>Systems at a glance</h2>
+                </div>
+                <span class="diagram-count">${caseStudy.diagrams.length} diagrams</span>
+            </div>
+            <div class="diagram-grid">
+                ${caseStudy.diagrams.map((diagram) => `
+                    <figure class="diagram-card">
+                        <div class="diagram-image-wrap">
+                            <img src="${caseStudy.imagePath || 'Files/Tower of babel/Images'}/${diagram.file}" alt="${diagram.title}" loading="lazy">
+                            <button class="media-expand-button" type="button" data-viewer-type="diagram" aria-label="Open ${diagram.title} fullscreen" title="Open fullscreen">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>
+                            </button>
+                        </div>
+                        <figcaption>
+                            <strong>${diagram.title}</strong>
+                            <span>${diagram.caption}</span>
+                        </figcaption>
+                    </figure>
+                `).join('')}
+            </div>
+        </section>
+    `;
+}
+
+function renderDetailPageContent(detailPageContent, currentItem, projectInfo) {
+    detailPageContent.classList.remove('project-case-study');
+
+    if (projectInfo && projectInfo.caseStudy) {
+        renderProjectCaseStudy(detailPageContent, projectInfo.caseStudy);
+        return;
+    }
+
+    detailPageContent.textContent = (projectInfo && projectInfo.detailed)
+        ? getProjectDetailText(projectInfo)
+        : (currentItem.detailContent[currentLanguage] || currentItem.content[currentLanguage]);
+}
+
 // State
 let selectedCategory = 0;
 let selectedItem = 0;
 let touchStart = null;
 let touchEnd = null;
 const minSwipeDistance = 50;
-let lastTapTime = 0;
 
 // Initialize
 function init() {
@@ -376,16 +809,14 @@ function refreshOpenDetailPageLanguage() {
     const currentItem = menuData[selectedCategory].items[selectedItem];
     if (!currentItem) return;
 
-    const projectInfo = selectedCategory === 1 ? PROJECT_DETAIL_INFO[currentItem.title.en] : null;
+    const projectInfo = isProjectsCategory(selectedCategory) ? PROJECT_DETAIL_INFO[currentItem.title.en] : null;
     const detailPageTitle = document.getElementById('detailPageTitle');
     const detailPageSubtitle = document.getElementById('detailPageSubtitle');
     const detailPageContent = document.getElementById('detailPageContent');
 
     detailPageTitle.textContent = currentItem.title[currentLanguage];
     detailPageSubtitle.textContent = currentItem.description[currentLanguage];
-    detailPageContent.textContent = (projectInfo && projectInfo.detailed)
-        ? getProjectDetailText(projectInfo)
-        : (currentItem.detailContent[currentLanguage] || currentItem.content[currentLanguage]);
+    renderDetailPageContent(detailPageContent, currentItem, projectInfo);
 }
 
 // Update UI translations
@@ -394,23 +825,39 @@ function updateTranslations() {
     document.getElementById('backButtonText').textContent = translations.backToMenu[currentLanguage];
     document.getElementById('navHintDesktop').textContent = translations.navHintDesktop[currentLanguage];
     document.getElementById('navHintMobile').textContent = translations.navHintMobile[currentLanguage];
+    document.getElementById('navHintKeyboard').textContent = translations.navHintKeyboard[currentLanguage];
+    document.getElementById('categoryControlLabel').textContent = translations.categoryLabel[currentLanguage];
+    document.getElementById('itemControlLabel').textContent = translations.itemLabel[currentLanguage];
+
+    document.querySelector('[data-navigation="previous-category"]').setAttribute('aria-label', translations.previousCategory[currentLanguage]);
+    document.querySelector('[data-navigation="previous-category"]').setAttribute('title', translations.previousCategory[currentLanguage]);
+    document.querySelector('[data-navigation="next-category"]').setAttribute('aria-label', translations.nextCategory[currentLanguage]);
+    document.querySelector('[data-navigation="next-category"]').setAttribute('title', translations.nextCategory[currentLanguage]);
+    document.querySelector('[data-navigation="previous-item"]').setAttribute('aria-label', translations.previousItem[currentLanguage]);
+    document.querySelector('[data-navigation="previous-item"]').setAttribute('title', translations.previousItem[currentLanguage]);
+    document.querySelector('[data-navigation="next-item"]').setAttribute('aria-label', translations.nextItem[currentLanguage]);
+    document.querySelector('[data-navigation="next-item"]').setAttribute('title', translations.nextItem[currentLanguage]);
 }
 
 // Render categories
 function renderCategories() {
     const wrapper = document.getElementById('categoriesWrapper');
     wrapper.innerHTML = menuData.map((category, catIdx) => `
-        <div class="category-column" data-category="${catIdx}">
-            <div class="category-icon-wrapper" onclick="selectCategory(${catIdx})">
+        <section class="category-column" id="${catIdx === 0 ? 'about' : catIdx === 1 ? 'work' : 'contact'}" data-category="${catIdx}">
+            <button class="category-icon-wrapper" type="button" onclick="selectCategory(${catIdx})" aria-label="Select ${category.title[currentLanguage]}">
                 <div class="category-icon" data-icon="${catIdx}">
                     <svg viewBox="0 0 24 24">${icons[category.icon]}</svg>
                 </div>
                 <p class="category-title" data-title="${catIdx}">${category.title[currentLanguage]}</p>
+            </button>
+            ${category.title.en === 'About Me' ? `
+            <div class="about-copy" data-about-copy>
+                ${category.items[0].detailContent[currentLanguage].split('\n\n').map((paragraph) => `<p>${paragraph}</p>`).join('')}
             </div>
-            <div class="items-list ${catIdx === 1 ? 'projects-list' : ''}">
-                ${catIdx === 1 ? `<div class="projects-track">` : ''}
+            ` : `<div class="items-list ${isProjectsCategory(catIdx) ? 'projects-list' : ''}">
+                ${isProjectsCategory(catIdx) ? `<div class="projects-track">` : ''}
                 ${category.items.map((item, itemIdx) => `
-                    <div class="item-card" data-item="${catIdx}-${itemIdx}" onclick="handleItemClick(${catIdx}, ${itemIdx})">
+                    <button class="item-card" type="button" data-item="${catIdx}-${itemIdx}" onclick="handleItemClick(${catIdx}, ${itemIdx})" aria-label="Open ${item.title[currentLanguage]}">
                         <div class="item-row">
                             <span class="item-inline-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24">${getItemIconFor(catIdx, item.title.en)}</svg>
@@ -420,47 +867,36 @@ function renderCategories() {
                                 <p class="item-description">${item.description[currentLanguage]}</p>
                             </div>
                         </div>
-                    </div>
+                    </button>
                 `).join('')}
-                ${catIdx === 1 ? `
+                ${isProjectsCategory(catIdx) ? `
                     <div class="item-card ghost-tab" aria-hidden="true"></div>
                     <div class="item-card ghost-tab" aria-hidden="true"></div>
                     <div class="item-card ghost-tab" aria-hidden="true"></div>
                 ` : ''}
-                ${catIdx === 1 ? `</div>` : ''}
-            </div>
+                ${isProjectsCategory(catIdx) ? `</div>` : ''}
+            </div>`}
         </div>
     `).join('');
 }
 
-// Handle item click (double-click to open detail page)
+// Handle item click
 function handleItemClick(catIdx, itemIdx) {
-    const now = Date.now();
-    const timeSinceLastTap = now - lastTapTime;
-
     selectItem(catIdx, itemIdx);
-
-    // If double-click/tap (within 300ms), open detail page
-    if (timeSinceLastTap < 300 && timeSinceLastTap > 0) {
-        openDetailPage();
-    }
-
-    lastTapTime = now;
+    openDetailPage();
 }
 
 // Open detail page
 function openDetailPage() {
     const currentItem = menuData[selectedCategory].items[selectedItem];
-    const projectInfo = selectedCategory === 1 ? PROJECT_DETAIL_INFO[currentItem.title.en] : null;
+    const projectInfo = isProjectsCategory(selectedCategory) ? PROJECT_DETAIL_INFO[currentItem.title.en] : null;
     const detailGithubLink = document.getElementById('detailGithubLink');
     const detailPageContent = document.getElementById('detailPageContent');
 
     document.getElementById('detailPageTitle').textContent = currentItem.title[currentLanguage];
     document.getElementById('detailPageSubtitle').textContent = currentItem.description[currentLanguage];
 
-    detailPageContent.textContent = (projectInfo && projectInfo.detailed)
-        ? getProjectDetailText(projectInfo)
-        : (currentItem.detailContent[currentLanguage] || currentItem.content[currentLanguage]);
+    renderDetailPageContent(detailPageContent, currentItem, projectInfo);
 
     if (projectInfo && projectInfo.github && projectInfo.github !== '#') {
         detailGithubLink.href = projectInfo.github;
@@ -482,10 +918,58 @@ function closeDetailPage() {
     document.body.classList.remove('detail-view');
 }
 
-function alignProjectsListToSelected() {
-    if (selectedCategory !== 1) return;
+function openMediaViewer(button) {
+    const viewer = document.getElementById('mediaViewer');
+    const viewerTitle = document.getElementById('mediaViewerTitle');
+    const viewerBody = document.getElementById('mediaViewerBody');
+    const card = button.closest('.code-card, .diagram-card');
+    if (!viewer || !viewerTitle || !viewerBody || !card) return;
 
-    const projectsColumn = document.querySelector('.category-column[data-category="1"]');
+    viewerBody.replaceChildren();
+    document.getElementById('mediaViewerType').textContent =
+        menuData[selectedCategory].items[selectedItem].title[currentLanguage];
+    viewerTitle.textContent = card.querySelector('strong').textContent;
+
+    if (button.dataset.viewerType === 'diagram') {
+        const image = card.querySelector('img').cloneNode();
+        image.removeAttribute('loading');
+        image.className = 'media-viewer-image';
+        viewerBody.appendChild(image);
+    } else {
+        const explanation = document.createElement('p');
+        explanation.className = 'media-viewer-explanation';
+        explanation.textContent = card.querySelector('.code-card-explanation').textContent;
+
+        const source = document.createElement('p');
+        source.className = 'media-viewer-source';
+        source.textContent = card.querySelector('.code-card-header span').textContent;
+
+        const code = document.createElement('pre');
+        code.className = 'media-viewer-code';
+        code.textContent = card.querySelector('code').textContent;
+
+        viewerBody.append(explanation, source, code);
+    }
+
+    viewer.classList.add('visible');
+    viewer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('viewer-open');
+    document.querySelector('.media-viewer-close').focus();
+}
+
+function closeMediaViewer() {
+    const viewer = document.getElementById('mediaViewer');
+    if (!viewer) return;
+
+    viewer.classList.remove('visible');
+    viewer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('viewer-open');
+}
+
+function alignProjectsListToSelected() {
+    if (!isProjectsCategory(selectedCategory)) return;
+
+    const projectsColumn = document.querySelector(`.category-column[data-category="${selectedCategory}"]`);
     if (!projectsColumn) return;
 
     const list = projectsColumn.querySelector('.items-list');
@@ -537,6 +1021,7 @@ function updateUI() {
         const icon = col.querySelector('.category-icon');
         const title = col.querySelector('.category-title');
         const iconWrapper = col.querySelector('.category-icon-wrapper');
+        iconWrapper.setAttribute('aria-pressed', String(distance === 0));
 
         if (distance === 0) {
             icon.classList.add('active');
@@ -566,6 +1051,7 @@ function updateUI() {
 
             item.style.setProperty('--scale', itemScale);
             item.style.opacity = itemOpacity;
+            item.setAttribute('aria-pressed', String(isActiveCategory && itemDistance === 0));
 
             if (isActiveCategory && itemDistance === 0) {
                 item.classList.add('active');
@@ -581,7 +1067,52 @@ function updateUI() {
     detailText.textContent = menuData[selectedCategory].items[selectedItem].content[currentLanguage];
     detailPanel.classList.add('visible');
 
+    updateNavigationControls();
+
     alignProjectsListToSelected();
+}
+
+function updateNavigationControls() {
+    const previousCategory = document.querySelector('[data-navigation="previous-category"]');
+    const nextCategory = document.querySelector('[data-navigation="next-category"]');
+    const previousItem = document.querySelector('[data-navigation="previous-item"]');
+    const nextItem = document.querySelector('[data-navigation="next-item"]');
+
+    if (!previousCategory || !nextCategory || !previousItem || !nextItem) return;
+
+    previousCategory.disabled = selectedCategory === 0;
+    nextCategory.disabled = selectedCategory === menuData.length - 1;
+    previousItem.disabled = selectedItem === 0;
+    nextItem.disabled = selectedItem === menuData[selectedCategory].items.length - 1;
+}
+
+function announceNavigationBoundary() {
+    const navStatus = document.getElementById('navStatus');
+    if (!navStatus) return;
+
+    navStatus.textContent = translations.navigationBoundary[currentLanguage];
+    window.setTimeout(() => {
+        navStatus.textContent = '';
+    }, 900);
+}
+
+function moveSelection(direction, amount) {
+    const previousCategory = selectedCategory;
+    const previousItem = selectedItem;
+
+    if (direction === 'category') {
+        selectedCategory = Math.max(0, Math.min(menuData.length - 1, selectedCategory + amount));
+        selectedItem = 0;
+    } else {
+        selectedItem = Math.max(0, Math.min(menuData[selectedCategory].items.length - 1, selectedItem + amount));
+    }
+
+    if (selectedCategory === previousCategory && selectedItem === previousItem) {
+        announceNavigationBoundary();
+        return;
+    }
+
+    updateUI();
 }
 
 // Selection functions
@@ -601,39 +1132,68 @@ function selectItem(catIdx, itemIdx) {
 
 // Event listeners
 function attachEventListeners() {
+    document.querySelectorAll('[data-navigation]').forEach((control) => {
+        control.addEventListener('click', () => {
+            const navigation = control.dataset.navigation;
+            const direction = navigation.endsWith('category') ? 'category' : 'item';
+            const amount = navigation.startsWith('previous') ? -1 : 1;
+            moveSelection(direction, amount);
+        });
+    });
+
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
+        if (document.getElementById('mediaViewer').classList.contains('visible')) {
+            if (e.key === 'Escape') closeMediaViewer();
+            return;
+        }
+
         // If detail page is open
         if (document.getElementById('detailPage').classList.contains('visible')) {
             if (e.key === 'Escape' || e.key === 'Backspace') {
+                e.preventDefault();
                 closeDetailPage();
             }
             return;
         }
 
+        const interactiveTarget = e.target.closest('button, a, input, textarea, select');
+        if (interactiveTarget && !interactiveTarget.classList.contains('item-card')) return;
+
         if (e.key === 'ArrowLeft') {
-            selectedCategory = Math.max(0, selectedCategory - 1);
-            selectedItem = 0;
-            updateUI();
+            e.preventDefault();
+            moveSelection('category', -1);
         } else if (e.key === 'ArrowRight') {
-            selectedCategory = Math.min(menuData.length - 1, selectedCategory + 1);
-            selectedItem = 0;
-            updateUI();
+            e.preventDefault();
+            moveSelection('category', 1);
         } else if (e.key === 'ArrowUp') {
-            selectedItem = Math.max(0, selectedItem - 1);
-            updateUI();
+            e.preventDefault();
+            moveSelection('item', -1);
         } else if (e.key === 'ArrowDown') {
-            selectedItem = Math.min(menuData[selectedCategory].items.length - 1, selectedItem + 1);
-            updateUI();
+            e.preventDefault();
+            moveSelection('item', 1);
         } else if (e.key === 'Enter') {
+            e.preventDefault();
             openDetailPage();
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        const expandButton = e.target.closest('.media-expand-button');
+        if (expandButton) {
+            openMediaViewer(expandButton);
+            return;
+        }
+
+        if (e.target.closest('[data-close-viewer="true"]')) {
+            closeMediaViewer();
         }
     });
 
     // Mouse wheel navigation for project list (keeps selected project centered)
     document.addEventListener('wheel', (e) => {
         if (document.getElementById('detailPage').classList.contains('visible')) return;
-        if (selectedCategory !== 1) return;
+        if (!isProjectsCategory(selectedCategory)) return;
 
         e.preventDefault();
         if (Math.abs(e.deltaY) < 8) return;

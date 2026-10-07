@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XMB Portfolio</title>
+    <title>Arthur Henriques Garcia — Game Developer</title>
     <link rel="stylesheet" href="xmb-portfolio.css">
 </head>
 <body>
@@ -17,9 +17,20 @@
     </div>
 
     <!-- Header -->
-    <div class="header">
-        <h1 id="headerName">Arthur Henriques Garcia</h1>
-    </div>
+    <header class="header">
+        <div class="header-brand">
+            <span class="header-mark" aria-hidden="true">AH</span>
+            <div>
+                <p class="header-kicker">Game developer / systems thinker</p>
+                <h1 id="headerName">Arthur Henriques Garcia</h1>
+            </div>
+        </div>
+        <nav class="header-nav" aria-label="Main navigation">
+            <a href="#work">Selected work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
     <!-- Language switcher -->
     <div class="language-switcher">
@@ -29,7 +40,14 @@
     </div>
 
     <!-- Main XMB Interface -->
-    <div class="xmb-container" id="xmbContainer">
+    <main class="xmb-container" id="xmbContainer">
+        <section class="hero" aria-labelledby="heroTitle">
+            <div class="hero-copy-block">
+                <p class="eyebrow">Portfolio / 2026</p>
+                <p class="hero-copy" id="heroTitle">I am Arthur, a gameplay and tools developer from Rio de Janeiro, now based in Amsterdam. I enjoy making clear, responsive mechanics and practical prototypes.</p>
+            </div>
+            <img class="hero-photo" src="Files/Fotos/photo_woman_removed.jpg" alt="Arthur Henriques Garcia">
+        </section>
         <div class="categories-wrapper" id="categoriesWrapper">
             <!-- Categories will be generated here -->
         </div>
@@ -38,14 +56,38 @@
         <div class="detail-panel" id="detailPanel">
             <div class="detail-content">
                 <p class="detail-text" id="detailText"></p>
-            </div>
+            </main>
         </div>
 
         <!-- Navigation hint -->
         <div class="nav-hint">
-            <span class="desktop-hint" id="navHintDesktop">Use arrow keys or click to navigate • Press Enter for details</span>
-            <span class="mobile-hint" id="navHintMobile">Swipe or tap to navigate • Tap twice for details</span>
+            <span class="desktop-hint" id="navHintDesktop">Use arrows or click to navigate • Click an item for details</span>
+            <span class="mobile-hint" id="navHintMobile">Use arrows or swipe to navigate • Click an item for details</span>
+            <span class="keyboard-hint" id="navHintKeyboard">Arrows navigate • Enter opens • Escape returns</span>
         </div>
+
+        <div class="navigation-controls" aria-label="Portfolio navigation">
+            <div class="category-controls">
+                <button class="nav-control" type="button" data-navigation="previous-category" aria-label="Previous category" title="Previous category">
+                    <span aria-hidden="true">&#8592;</span>
+                </button>
+                <span class="control-label" id="categoryControlLabel">Category</span>
+                <button class="nav-control" type="button" data-navigation="next-category" aria-label="Next category" title="Next category">
+                    <span aria-hidden="true">&#8594;</span>
+                </button>
+            </div>
+            <div class="item-controls">
+                <button class="nav-control" type="button" data-navigation="previous-item" aria-label="Previous item" title="Previous item">
+                    <span aria-hidden="true">&#8593;</span>
+                </button>
+                <span class="control-label" id="itemControlLabel">Item</span>
+                <button class="nav-control" type="button" data-navigation="next-item" aria-label="Next item" title="Next item">
+                    <span aria-hidden="true">&#8595;</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="sr-only" id="navStatus" aria-live="polite"></div>
     </div>
 
     <!-- Detail Page -->
@@ -69,6 +111,22 @@
                 <p class="subtitle" id="detailPageSubtitle"></p>
                 <div class="content" id="detailPageContent"></div>
             </div>
+        </div>
+    </div>
+
+    <div class="media-viewer" id="mediaViewer" aria-hidden="true">
+        <div class="media-viewer-backdrop" data-close-viewer="true"></div>
+        <div class="media-viewer-dialog" role="dialog" aria-modal="true" aria-labelledby="mediaViewerTitle">
+            <div class="media-viewer-header">
+                <div>
+                    <p class="eyebrow" id="mediaViewerType">Tower of Babel</p>
+                    <h2 id="mediaViewerTitle"></h2>
+                </div>
+                <button class="media-viewer-close" type="button" onclick="closeMediaViewer()" aria-label="Close fullscreen viewer" title="Close fullscreen viewer">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+            </div>
+            <div class="media-viewer-body" id="mediaViewerBody"></div>
         </div>
     </div>
 
