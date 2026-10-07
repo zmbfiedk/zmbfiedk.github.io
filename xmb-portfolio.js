@@ -263,6 +263,12 @@ const menuData = [
     }
 ];
 
+menuData.sort((left, right) => {
+    if (left.title.en === 'Projects') return -1;
+    if (right.title.en === 'Projects') return 1;
+    return 0;
+});
+
 const aboutCategory = menuData.find((category) => category.title.en === 'About Me');
 const projectsCategory = menuData.find((category) => category.title.en === 'Projects');
 const cvCategoryIndex = menuData.findIndex((category) => category.title.en === 'CV');
@@ -350,6 +356,24 @@ function getItemIconFor(catIdx, itemTitleEn) {
     }
 
     return itemIcons.info;
+}
+
+function getProjectPreviewPath(itemTitleEn) {
+    const projectInfo = PROJECT_DETAIL_INFO[itemTitleEn];
+    const caseStudy = projectInfo?.caseStudy;
+    const firstDiagram = caseStudy?.diagrams?.[0];
+
+    if (!caseStudy || !firstDiagram) return '';
+    return `${caseStudy.imagePath || 'Files/Tower of babel/Images'}/${firstDiagram.file}`;
+}
+
+function updateProjectPreview(itemTitleEn) {
+    const projectDisc = document.querySelector('.project-disc-image');
+    const projectInfo = PROJECT_DETAIL_INFO[itemTitleEn];
+    if (!projectDisc || !projectInfo) return;
+
+    projectDisc.src = getProjectPreviewPath(itemTitleEn);
+    projectDisc.alt = `${itemTitleEn} preview`;
 }
 
 // Original detailed project information + GitHub links
@@ -567,7 +591,77 @@ const PROJECT_DETAIL_INFO = {
     },
     'Small C++ Games': {
         github: 'https://github.com/zmbfiedk/Shipgame',
-        detailed: 'Sprint 0 - Game Design Document : Small C++ Games\n\nNaam: Arthur\nKlas: GD1B\nDatum: 13/04/2026\n\n1. Titel en elevator pitch\n\nTitel: Small C++ Games\n\nElevator pitch (maximaal twee zinnen):\nSmall C++ Games is a collection of small terminal-based games made to improve C++ skills. Each game focuses on a different core mechanic.\n\n2. Wat maakt jouw project uniek\n\nInstead of one large project, this focuses on multiple small games, each targeting specific programming skills using simple terminal visuals.\n\n3. Scope\nShip (done)\nPong (in progress)\nPlatformer (planned)\nRace game (planned)\n4. Mechanics\nMovement systems\nCollision systems\nPhysics basics\nGame loops\n5. Gameplay loop\nInput\nUpdate\nRender\nRepeat\n6. Progressie\nIncreasing complexity per game\nFrom simple movement -> full systems\n7. Risico\'s en oplossingen\nTerminal limits -> simple visuals\nComplexity -> keep systems small\nMessy code -> structure code\n8. Planning\nSprint 1: Ship\nSprint 2: Pong\nSprint 3: Platformer\nSprint 4: Race game\n9. Inspiratie\nRetro games\nPong\n10. Technisch ontwerp mini\nGame loop -> while loop\nInput -> keyboard\nCollision -> coordinate checks'
+        detailed: 'Sprint 0 - Game Design Document : Small C++ Games\n\nName: Arthur\nClass: GD1B\nDate: 13/04/2026\n\nSmall C++ Games is a collection of small terminal-based games made to improve C++ skills. The current Shipgame prototype behaves like a two-paddle Pong game and focuses on input, vector-based ball physics, collision response, scoring, and rendering in the Windows console.\n\nThe project is structured around small, readable classes instead of an engine: Main owns the loop and frame composition, Ball owns movement and bounce response, Player and Enemy represent the paddles, Border defines the playfield, and Scoreboard handles score output. The game reads keyboard input, updates the simulation, builds a character grid, and renders the complete frame at approximately 60 ms intervals.\n\nThe broader collection is planned to grow from simple movement systems into platformer and racing prototypes, increasing the complexity one focused system at a time.',
+        caseStudy: {
+            intro: 'A compact C++ Windows console arcade prototype that makes the fundamentals of real-time game programming visible: input, physics, collision response, scoring, and terminal rendering.',
+            stats: [
+                { value: 'C++', label: 'Language' },
+                { value: '60 ms', label: 'Target frame step' },
+                { value: '50 x 14', label: 'Playfield cells' }
+            ],
+            sections: [
+                {
+                    title: 'A readable game loop',
+                    text: 'Main reads all available keyboard input, updates the ball, handles scoring and serve resets, composes the current character grid, and renders the complete frame. Keeping those stages explicit makes the runtime easy to inspect and extend.'
+                },
+                {
+                    title: 'Paddle-driven physics',
+                    text: 'The ball stores floating-point coordinates and velocity, then maps them to grid cells only for collision queries and display. The paddle segment that is hit determines the bounce angle, while acceleration is normalized and capped to keep rallies controllable.'
+                },
+                {
+                    title: 'Small responsibilities',
+                    text: 'Player and Enemy handle paddle geometry and bounds, Border draws the arena, and Scoreboard renders the score. Ball receives these objects as read-only game state, keeping world ownership in Main and physics decisions inside Ball.'
+                },
+                {
+                    title: 'Collision and scoring',
+                    text: 'Ball::update checks border reflection first, then the paddle matching the current horizontal direction, and finally whether the ball has left the arena. A score resets the ball state and alternates the serve direction.'
+                },
+                {
+                    title: 'Console rendering pipeline',
+                    text: 'Rendering starts with an empty vector of strings, places paddles and ball into the grid, adds the border and score line, and writes the assembled frame in one operation. This keeps terminal output deterministic and avoids scattered cursor updates.'
+                },
+                {
+                    title: 'Collection roadmap',
+                    text: 'Ship is complete and Pong is the current implementation focus. Platformer and racing prototypes are planned next, with each small game adding a new movement, collision, or game-loop challenge without losing the project’s focused scope.'
+                }
+            ],
+            codeSnippets: [
+                {
+                    title: 'Segment-based paddle bounce',
+                    language: 'C++',
+                    source: 'Player.cpp',
+                    explanation: 'Maps the impact segment on a seven-cell paddle to a readable bounce angle while safely handling invalid collision indices.',
+                    code: 'int Player::getBounceAngle(int segmentIndex) const\n{\n    if (segmentIndex < 0 || segmentIndex >= shapeHeight)\n        return 0;\n\n    const int middleIndex = shapeHeight / 2;\n    return (segmentIndex - middleIndex) * 15;\n}'
+                },
+                {
+                    title: 'Capped ball acceleration',
+                    language: 'C++',
+                    source: 'Ball.cpp',
+                    explanation: 'Preserves the direction of travel while increasing speed predictably and preventing the rally from becoming uncontrollable.',
+                    code: 'void Ball::applyAcceleration()\n{\n    speed *= kAcceleration;\n    speed = std::min(speed, kMaxSpeed);\n\n    normalize(velocityX, velocityY);\n    velocityX *= speed;\n    velocityY *= speed;\n}'
+                },
+                {
+                    title: 'Frame composition',
+                    language: 'C++',
+                    source: 'Main.cpp',
+                    explanation: 'Builds a complete frame from data before writing it to the console, keeping game state and presentation separate.',
+                    code: 'std::vector<std::string> frame(height,\n    std::string(width, \' \'));\n\nplayer.draw(frame);\nenemy.draw(frame);\nball.draw(frame);\nborder.draw(frame);\nscoreboard.draw(frame);\n\nrenderFrame(frame);'
+                }
+            ],
+            imagePath: 'Files/C++ small games',
+            diagrams: [
+                {
+                    file: 'shipgame-terminal-sheet.png',
+                    title: 'Shipgame terminal prototype',
+                    caption: 'The console playfield, paddle-and-ball interaction, controls, and the class responsibilities behind the current Windows prototype.'
+                },
+                {
+                    file: 'Pong-sheet.png',
+                    title: 'Pong systems sheet',
+                    caption: 'The Pong-focused view of input, vector movement, paddle collision, scoring, reset behavior, and the real-time game loop.'
+                }
+            ]
+        }
     },
     'Fractured': {
         github: 'https://github.com/MrRaven55/CheeseHeist',
@@ -843,10 +937,13 @@ function updateTranslations() {
 function renderCategories() {
     const wrapper = document.getElementById('categoriesWrapper');
     wrapper.innerHTML = menuData.map((category, catIdx) => `
-        <section class="category-column" id="${catIdx === 0 ? 'about' : catIdx === 1 ? 'work' : 'contact'}" data-category="${catIdx}">
+        <div class="portfolio-page portfolio-page-${category.title.en === 'About Me' ? 'about' : category.title.en === 'Projects' ? 'projects' : 'contact'}">
+        <section class="category-column ${category.title.en === 'About Me' ? 'about-category' : category.title.en === 'Projects' ? 'projects-category' : ''}" id="${category.title.en === 'About Me' ? 'about' : category.title.en === 'Projects' ? 'work' : 'contact'}" data-category="${catIdx}">
             <button class="category-icon-wrapper" type="button" onclick="selectCategory(${catIdx})" aria-label="Select ${category.title[currentLanguage]}">
-                <div class="category-icon" data-icon="${catIdx}">
-                    <svg viewBox="0 0 24 24">${icons[category.icon]}</svg>
+                <div class="category-icon ${isProjectsCategory(catIdx) ? 'project-disc' : ''}" data-icon="${catIdx}">
+                    ${isProjectsCategory(catIdx)
+                        ? `<img class="project-disc-image" src="${getProjectPreviewPath(category.items[0].title.en)}" alt="${category.items[0].title[currentLanguage]} preview">`
+                        : `<svg viewBox="0 0 24 24">${icons[category.icon]}</svg>`}
                 </div>
                 <p class="category-title" data-title="${catIdx}">${category.title[currentLanguage]}</p>
             </button>
@@ -857,7 +954,7 @@ function renderCategories() {
             ` : `<div class="items-list ${isProjectsCategory(catIdx) ? 'projects-list' : ''}">
                 ${isProjectsCategory(catIdx) ? `<div class="projects-track">` : ''}
                 ${category.items.map((item, itemIdx) => `
-                    <button class="item-card" type="button" data-item="${catIdx}-${itemIdx}" onclick="handleItemClick(${catIdx}, ${itemIdx})" aria-label="Open ${item.title[currentLanguage]}">
+                    <button class="item-card" type="button" data-item="${catIdx}-${itemIdx}" onmouseenter="updateProjectPreview('${item.title.en.replaceAll("'", "\\'")}')" onclick="handleItemClick(${catIdx}, ${itemIdx})" aria-label="Open ${item.title[currentLanguage]}">
                         <div class="item-row">
                             <span class="item-inline-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24">${getItemIconFor(catIdx, item.title.en)}</svg>
@@ -869,13 +966,9 @@ function renderCategories() {
                         </div>
                     </button>
                 `).join('')}
-                ${isProjectsCategory(catIdx) ? `
-                    <div class="item-card ghost-tab" aria-hidden="true"></div>
-                    <div class="item-card ghost-tab" aria-hidden="true"></div>
-                    <div class="item-card ghost-tab" aria-hidden="true"></div>
-                ` : ''}
                 ${isProjectsCategory(catIdx) ? `</div>` : ''}
             </div>`}
+        </section>
         </div>
     `).join('');
 }
@@ -966,24 +1059,6 @@ function closeMediaViewer() {
     document.body.classList.remove('viewer-open');
 }
 
-function alignProjectsListToSelected() {
-    if (!isProjectsCategory(selectedCategory)) return;
-
-    const projectsColumn = document.querySelector(`.category-column[data-category="${selectedCategory}"]`);
-    if (!projectsColumn) return;
-
-    const list = projectsColumn.querySelector('.items-list');
-    const track = projectsColumn.querySelector('.projects-track');
-    const activeCard = projectsColumn.querySelector(`.item-card[data-item="1-${selectedItem}"]`);
-    if (!list || !track || !activeCard) return;
-
-    const targetOffset = activeCard.offsetTop - (list.clientHeight - activeCard.clientHeight) / 2;
-    const maxOffset = Math.max(0, track.scrollHeight - list.clientHeight);
-    const clampedOffset = Math.max(0, Math.min(targetOffset, maxOffset));
-
-    track.style.transform = `translateY(${-clampedOffset}px)`;
-}
-
 // Update UI based on state
 function updateUI() {
     const wrapper = document.getElementById('categoriesWrapper');
@@ -1067,9 +1142,14 @@ function updateUI() {
     detailText.textContent = menuData[selectedCategory].items[selectedItem].content[currentLanguage];
     detailPanel.classList.add('visible');
 
+    const projectsIndex = menuData.findIndex((category) => category.title.en === 'Projects');
+    if (projectsIndex >= 0) {
+        const selectedProject = menuData[projectsIndex].items[selectedCategory === projectsIndex ? selectedItem : 0];
+        updateProjectPreview(selectedProject.title.en);
+    }
+
     updateNavigationControls();
 
-    alignProjectsListToSelected();
 }
 
 function updateNavigationControls() {
@@ -1120,14 +1200,12 @@ function selectCategory(idx) {
     selectedCategory = idx;
     selectedItem = 0;
     scheduleUIUpdate();
-    alignProjectsListToSelected();
 }
 
 function selectItem(catIdx, itemIdx) {
     selectedCategory = catIdx;
     selectedItem = itemIdx;
     scheduleUIUpdate();
-    alignProjectsListToSelected();
 }
 
 // Event listeners
@@ -1189,22 +1267,6 @@ function attachEventListeners() {
             closeMediaViewer();
         }
     });
-
-    // Mouse wheel navigation for project list (keeps selected project centered)
-    document.addEventListener('wheel', (e) => {
-        if (document.getElementById('detailPage').classList.contains('visible')) return;
-        if (!isProjectsCategory(selectedCategory)) return;
-
-        e.preventDefault();
-        if (Math.abs(e.deltaY) < 8) return;
-
-        if (e.deltaY > 0) {
-            selectedItem = Math.min(menuData[selectedCategory].items.length - 1, selectedItem + 1);
-        } else {
-            selectedItem = Math.max(0, selectedItem - 1);
-        }
-        updateUI();
-    }, { passive: false });
 
     // Touch navigation
     document.addEventListener('touchstart', (e) => {
