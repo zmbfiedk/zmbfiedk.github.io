@@ -168,6 +168,16 @@ const menuData = [
                 }
             },
             {
+                title: { en: 'Digital Divinity', pt: 'Digital Divinity', nl: 'Digital Divinity' },
+                description: { en: 'Unity • C# • Stealth horror systems', pt: 'Unity • C# • Sistemas de stealth horror', nl: 'Unity • C# • Stealth-horrorsystemen' },
+                content: { en: 'A stealth-horror project focused on enemy perception, traversal, audio, and tension.', pt: 'Um projeto de stealth horror focado em percepcao inimiga, traversal, audio e tensao.', nl: 'Een stealth-horrorproject rond enemy perception, traversal, audio en spanning.' },
+                detailContent: {
+                    en: 'Digital Divinity is a stealth-horror Unity project where I designed and implemented the enemy system from perception through decision-making, movement, searching, chasing, and player defeat. I also worked on player audio and listening systems so movement becomes readable through sound and enemies can react to those sounds.',
+                    pt: 'Digital Divinity e um projeto de stealth horror em Unity no qual projetei e implementei o sistema de inimigos, desde a percepcao ate a tomada de decisoes, movimento, busca, perseguicao e derrota do jogador. Tambem trabalhei nos sistemas de audio e escuta do jogador para tornar o movimento legivel pelo som e permitir que os inimigos reajam a esses sons.',
+                    nl: 'Digital Divinity is een stealth-horrorproject in Unity waarin ik het vijandsysteem ontwierp en implementeerde: van perceptie en besluitvorming tot beweging, zoeken, achtervolgen en het verslaan van de speler. Ik werkte ook aan de audio- en luister systemen zodat beweging hoorbaar wordt en vijanden daarop kunnen reageren.'
+                }
+            },
+            {
                 title: { en: 'Roguelike Action Platformer', pt: 'Plataforma Roguelike de Acao', nl: 'Roguelike Action Platformer' },
                 description: { en: 'Unity • Roguelike systems', pt: 'Unity • Sistemas roguelike', nl: 'Unity • Roguelike systems' },
                 content: { en: 'Replay-focused design with progression and challenge.', pt: 'Design focado em replay com progressao e desafio.', nl: 'Replay-gericht ontwerp met progressie en uitdaging.' },
@@ -280,7 +290,8 @@ if (projectsCategory) {
         'DoomLikeShooter',
         'TowerDefense',
         'Small C++ Games',
-        'Fractured'
+        'Fractured',
+        'Digital Divinity'
     ]);
     projectsCategory.items = projectsCategory.items.filter((item) => completedProjects.has(item.title.en));
 }
@@ -361,6 +372,8 @@ function getItemIconFor(catIdx, itemTitleEn) {
 function getProjectPreviewPath(itemTitleEn) {
     const projectInfo = PROJECT_DETAIL_INFO[itemTitleEn];
     const caseStudy = projectInfo?.caseStudy;
+    if (projectInfo?.coverPath) return projectInfo.coverPath;
+
     const firstDiagram = caseStudy?.diagrams?.[0];
 
     if (!caseStudy || !firstDiagram) return '';
@@ -376,10 +389,16 @@ function updateProjectPreview(itemTitleEn) {
     projectDisc.alt = `${itemTitleEn} preview`;
 }
 
+function getProjectStatus(itemTitleEn) {
+    return PROJECT_DETAIL_INFO[itemTitleEn]?.status || '';
+}
+
 // Original detailed project information + GitHub links
 const PROJECT_DETAIL_INFO = {
     'Tower of Babel': {
         github: 'https://github.com/zmbfiedk/BO1.4/tree/dev',
+        status: 'finished',
+        coverPath: 'Files/Tower of babel/Images/StartScreen/M4BO_Startscreen.png',
         detailed: 'Sprint 0 - Game Design Document : Tower Of Babel\n\nNaam: Rubin\nKlas: GD1B\nDatum: 13/04/2026\n\n1. Titel en elevator pitch\n\nTitel: Tower Of Babel\n\nElevator pitch (maximaal twee zinnen):\nTower Of Babel is a wave-based hack and slash game where players fight increasingly stronger enemies. Every 10 waves both the enemies and the player become stronger, creating a scaling challenge.\n\n2. Wat maakt jouw game uniek\n\nThe game focuses on precise combat mechanics like dodge rolls, sprinting, and a 2-step combat system. Combined with multiple weapons, the player is constantly adapting their playstyle.\n\n3. Scope\nWave-based combat system\n3 weapons\nMultiple enemy types\nBoss at wave 50\nSimple arena level\n4. Mechanics\nCombat system (attack, parry, dodge)\nStamina system\nWeapon switching\nEnemy AI\nWave system\n5. Gameplay loop\nFight enemies\nAvoid damage\nDefeat wave\nGain strength\nRepeat\nDefeat boss\n6. Progressie\nEvery 10 waves:\nPlayer damage increases\nEnemies scale in strength\n7. Risico\'s en oplossingen\nBalancing issues -> playtesting\nCombat too hard -> adjust stamina/damage\nScaling too extreme -> tune values\n8. Planning\nSprint 1: Core combat\nSprint 2: Enemy systems\nSprint 3: Weapons\nSprint 4: Progression\nSprint 5: Boss\nSprint 6: Polish\n9. Inspiratie\nHack and slash games\nWave survival games\n10. Technisch ontwerp mini\nCombat system -> input + cooldowns\nEnemy AI -> state system\nWaves -> spawn system',
         caseStudy: {
             intro: 'A wave-based hack-and-slash prototype built around precise combat, escalating pressure, and readable enemy systems.',
@@ -462,6 +481,7 @@ const PROJECT_DETAIL_INFO = {
     },
     'DoomLikeShooter': {
         github: '#',
+        status: 'unfinished',
         detailed: 'DoomLikeShooter\n\nProject snapshot\nA small, understandable first-person rendering prototype built with C++ and SFML 2.x. The project focuses on the underlying systems instead of a large content pipeline.\n\nCore systems\n- Grid-based map validation and collision-aware movement\n- Camera-space ray generation and DDA grid traversal\n- Per-column wall projection with distance and surface-orientation shading\n- Weapon selection, sprite rendering, fire-rate control, and procedural muzzle flash feedback\n\nProject goals\n- Represent an editable level as a simple grid\n- Convert player position and rotation into camera rays\n- Traverse the grid until each ray finds a wall\n- Turn wall distance into screen height and brightness\n- Keep each system small enough to understand, debug, and extend\n\nTechnology\n- C++\n- SFML 2.x\n- Visual Studio 2022\n- MSVC v143\n- x64 Windows build configuration',
         caseStudy: {
             intro: 'A compact raycasting first-person shooter prototype that exposes the rendering, movement, collision, and weapon systems behind the experience.',
@@ -522,6 +542,7 @@ const PROJECT_DETAIL_INFO = {
     },
     'TowerDefense': {
         github: 'https://github.com/zmbfiedk/Tower-Defense',
+        status: 'finished',
         detailed: 'Sprint 0 - Game Design Document: Dragon Defense\nName: Arthur | Class: GD1B | Date: 08/09/2025\n\nDragon Defense is a tower defense game designed to avoid repetitive meta play. Every 10 waves the towers must be swapped, forcing strategic adaptation.\n\nFull project info:\n- 6 tower archetypes: Fast, Slow, Long Range, Short Range, Freeze, Flame\n- 5 enemy types + boss waves every 10 rounds\n- Dynamic progression: HP +10% per wave, speed +5% per wave, reward scaling\n- Grid-based placement and waypoint pathing system\n- Economy loop with building, upgrades, and strategic replacement\n\nTechnical process:\n- Sprint 1-5 roadmap from core loop to polish and boss logic\n- Event-driven architecture connecting Player, Tower, Enemy, Wave, UI, and Music managers\n- Dedicated balancing cycles for tower identity, enemy pressure, and fairness',
         caseStudy: {
             intro: 'A tactical tower defense prototype built around forced adaptation, readable placement rules, and wave systems that keep the player changing their strategy.',
@@ -591,6 +612,8 @@ const PROJECT_DETAIL_INFO = {
     },
     'Small C++ Games': {
         github: 'https://github.com/zmbfiedk/Shipgame',
+        status: 'unfinished',
+        coverPath: 'Files/C++ small games/StartScreen/cover.png',
         detailed: 'Sprint 0 - Game Design Document : Small C++ Games\n\nName: Arthur\nClass: GD1B\nDate: 13/04/2026\n\nSmall C++ Games is a collection of small terminal-based games made to improve C++ skills. The current Shipgame prototype behaves like a two-paddle Pong game and focuses on input, vector-based ball physics, collision response, scoring, and rendering in the Windows console.\n\nThe project is structured around small, readable classes instead of an engine: Main owns the loop and frame composition, Ball owns movement and bounce response, Player and Enemy represent the paddles, Border defines the playfield, and Scoreboard handles score output. The game reads keyboard input, updates the simulation, builds a character grid, and renders the complete frame at approximately 60 ms intervals.\n\nThe broader collection is planned to grow from simple movement systems into platformer and racing prototypes, increasing the complexity one focused system at a time.',
         caseStudy: {
             intro: 'A compact C++ Windows console arcade prototype that makes the fundamentals of real-time game programming visible: input, physics, collision response, scoring, and terminal rendering.',
@@ -622,7 +645,11 @@ const PROJECT_DETAIL_INFO = {
                 },
                 {
                     title: 'Collection roadmap',
-                    text: 'Ship is complete and Pong is the current implementation focus. Platformer and racing prototypes are planned next, with each small game adding a new movement, collision, or game-loop challenge without losing the project’s focused scope.'
+                    text: 'Ship is complete and Pong is the current implementation focus. Terminal Arcade remains unfinished. Car Dodge and Tetris are planned next, with each small game adding a new movement, collision, or game-loop challenge without losing the project’s focused scope.'
+                },
+                {
+                    title: 'To-do list',
+                    text: 'Finished: Shipgame. In progress: Pong and Terminal Arcade. To do: Car Dodge and Tetris. The collection is developed independently as my solo project outside of course and college work.'
                 }
             ],
             codeSnippets: [
@@ -665,6 +692,8 @@ const PROJECT_DETAIL_INFO = {
     },
     'Fractured': {
         github: 'https://github.com/MrRaven55/CheeseHeist',
+        status: 'finished',
+        coverPath: 'Files/Fractured/StartScreen/Start_Screen2.png',
         detailed: 'Fractured is a Unity physics game built around launching a player character through an interactive environment. I implemented the player controller and the main destruction interactions: breaking walls and shattering glass.\n\nMy contribution\n- Built the player launch mechanic using a drag-and-release slingshot interaction.\n- Converted screen-space mouse input into a world-space position using a camera ray and horizontal plane.\n- Added launch force clamping, air drag, rest detection, and re-arming of the player.\n- Added a lives system connected to the GameManager UI.\n- Implemented player death, including a final launch impulse, audio, collider shutdown, and delayed destruction.\n- Built impact-based wall destruction using a configurable collision-speed threshold.\n- Implemented glass shattering by switching child glass fragments from kinematic to dynamic rigidbodies.\n- Added sound effects to launching, death, wall breaking, and glass breaking.\n\nTechnical approach\nThe player remains kinematic while aiming, then receives a clamped velocity change on release. Walls use pre-fractured pieces that stay kinematic until impact speed crosses a threshold. Glass uses the same authored-fragment approach but breaks immediately on player collision. State guards prevent repeated launches, death events, and wall breaks.\n\nPortfolio summary\nI designed and implemented a physics-driven interaction loop combining input handling, camera-to-world projection, Rigidbody forces, collision analysis, state management, audio feedback, and UI integration. The goal was to make the physics readable: pull distance affects launch power, impact speed determines whether a wall breaks, and released fragments make destruction visible and tactile.',
         caseStudy: {
             intro: 'A physics-driven interaction system where the player launches through the level and uses momentum to interact with destructible environments.',
@@ -725,6 +754,78 @@ const PROJECT_DETAIL_INFO = {
             imagePath: 'Files/Fractured',
             diagrams: [
                 { file: 'fracturedih-portfolio-sheet.png', title: 'Physics and destruction systems', caption: 'The complete project overview: player launch, impact-based wall breaking, glass shattering, technical decisions, and contribution.' }
+            ]
+        }
+    },
+    'Digital Divinity': {
+        github: '#',
+        status: 'finished',
+        detailed: 'Digital Divinity is a stealth-horror Unity project focused on enemy perception, player traversal, audio feedback, and tension.\n\nMy contribution\n- Designed and implemented enemy perception using vision, hearing, camera signals, detection meters, and memory.\n- Built the enemy state flow from patrol and alert through stalking, chase, and search behavior.\n- Implemented player movement states including sprinting, crouching, jumping, climbing, ledge grabbing, and mantling.\n- Connected player movement to footsteps, sound stimuli, enemy hearing, detection, and danger music.\n\nThe visual sheets document the gameplay systems and the way they connect into a readable stealth loop.',
+        caseStudy: {
+            intro: 'A stealth-horror systems project built around readable enemy perception, traversal choices, and an audio loop that turns player movement into tension.',
+            stats: [
+                { value: '5', label: 'Enemy behavior states' },
+                { value: '7', label: 'Movement actions' },
+                { value: '4', label: 'Visual system sheets' }
+            ],
+            sections: [
+                {
+                    title: 'Enemy perception',
+                    text: 'Vision, hearing, camera signals, and the detection meter feed a shared stimulus and memory layer. Sounds and sightings raise awareness and provide an investigation position instead of teleporting the enemy directly to the player.'
+                },
+                {
+                    title: 'Behavior state machine',
+                    text: 'Enemy behavior progresses from patrol to alert, stalking, chase, and search as detection strength changes. When the player is lost, the enemy uses the last known position and recent movement direction to search before returning to patrol.'
+                },
+                {
+                    title: 'Player traversal',
+                    text: 'Normal movement, sprinting, crouching, jumping, wall climbing, ledge grabbing, and mantling share readable state transitions. Ray checks identify climbable surfaces and a shared stamina bar limits traversal without making it feel arbitrary.'
+                },
+                {
+                    title: 'Audio and tension',
+                    text: 'Movement drives footsteps with cadence, pitch, volume, distance falloff, and wall occlusion. Those sound stimuli reach enemy hearing and detection, while the detection level crossfades normal music into danger music.'
+                },
+                {
+                    title: 'Systems integration',
+                    text: 'The project connects player control, traversal, audio generation, enemy sensing, state management, and feedback into one stealth loop. Each system exposes a clear signal that can be tuned independently during iteration.'
+                }
+            ],
+            codeSnippets: [
+                {
+                    title: 'Enemy sound stimulus',
+                    language: 'C#',
+                    source: 'EnemyAI.cs',
+                    explanation: 'Converts a sound event into detection and memory instead of directly forcing a chase.',
+                    code: 'float stimulus = hearingSystem.CalculateStimulus(source, volume01);\\ndetectionMeter.AddDetection(stimulus);\\nlastKnownPosition = source;\\nstateManager.RegisterPlayerPosition(source);'
+                },
+                {
+                    title: 'Detection state',
+                    language: 'C#',
+                    source: 'EnemyAI.cs',
+                    explanation: 'Uses detection thresholds to move the enemy through increasingly committed behavior states.',
+                    code: 'if (detection >= maxDetection * chaseThresholdPercent)\\n    stateManager.EnterChase();\\nelse if (detection >= maxDetection * stalkingThresholdPercent)\\n    stateManager.EnterStalking();\\nelse\\n    stateManager.EnterAlert();'
+                },
+                {
+                    title: 'Traversal state',
+                    language: 'C#',
+                    source: 'WallClimbing.cs',
+                    explanation: 'Starts a ledge grab only when the chest finds a wall and the head ray is clear, then drains traversal stamina.',
+                    code: 'if (chestHit && !headHit && TryStartLedgeGrab(wallHit))\\n    return;\\n\\nplayerStamina.ConsumeStamina(\\n    climbStaminaDrain * Time.fixedDeltaTime);'
+                },
+                {
+                    title: 'Footstep cadence',
+                    language: 'C#',
+                    source: 'FootstepAudioGenerator.cs',
+                    explanation: 'Triggers footsteps based on distance travelled so sound remains consistent across different movement speeds.',
+                    code: 'distanceAccumulated += frameDistance;\\nwhile (distanceAccumulated >= strideDistance)\\n{\\n    distanceAccumulated -= strideDistance;\\n    PlayFootstep(speed01);\\n}'
+                }
+            ],
+            imagePath: 'Files/DigitalDivinity/Images',
+            diagrams: [
+                { file: '01-enemy-perception-loop.png', title: 'Enemy perception loop', caption: 'How vision, hearing, camera signals, detection, and memory inform enemy decisions.' },
+                { file: '02-enemy-behaviour-state-machine.png', title: 'Enemy behavior state machine', caption: 'The progression from patrol to alert, stalking, chase, and search.' },
+                { file: '03-player-movement-traversal.png', title: 'Player movement and traversal', caption: 'Movement states, climbing checks, ledge grabbing, mantling, and stamina.' },
+                { file: '04-player-audio-enemy-listening.png', title: 'Player audio and enemy listening', caption: 'How footsteps become sound stimuli, detection, and danger music.' }
             ]
         }
     },
@@ -939,6 +1040,7 @@ function renderCategories() {
     wrapper.innerHTML = menuData.map((category, catIdx) => `
         <div class="portfolio-page portfolio-page-${category.title.en === 'About Me' ? 'about' : category.title.en === 'Projects' ? 'projects' : 'contact'}">
         <section class="category-column ${category.title.en === 'About Me' ? 'about-category' : category.title.en === 'Projects' ? 'projects-category' : ''}" id="${category.title.en === 'About Me' ? 'about' : category.title.en === 'Projects' ? 'work' : 'contact'}" data-category="${catIdx}">
+            <h2 class="section-heading">${category.title[currentLanguage]}</h2>
             <button class="category-icon-wrapper" type="button" onclick="selectCategory(${catIdx})" aria-label="Select ${category.title[currentLanguage]}">
                 <div class="category-icon ${isProjectsCategory(catIdx) ? 'project-disc' : ''}" data-icon="${catIdx}">
                     ${isProjectsCategory(catIdx)
@@ -962,6 +1064,7 @@ function renderCategories() {
                             <div class="item-text-block">
                                 <h3 class="item-title">${item.title[currentLanguage]}</h3>
                                 <p class="item-description">${item.description[currentLanguage]}</p>
+                                ${isProjectsCategory(catIdx) && getProjectStatus(item.title.en) ? `<span class="project-status project-status-${getProjectStatus(item.title.en)}">${getProjectStatus(item.title.en) === 'finished' ? 'Finished' : 'Unfinished'}</span>` : ''}
                             </div>
                         </div>
                     </button>

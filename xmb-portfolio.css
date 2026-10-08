@@ -148,11 +148,35 @@ body.viewer-open {
     transition: transform 0.3s, opacity 0.3s;
 }
 
+.section-heading {
+    margin: 0 0 28px;
+    display: flex;
+    width: min(100%, 1000px);
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    color: #edf0f7;
+    font-size: clamp(32px, 4vw, 58px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    text-align: center;
+}
+
+.section-heading::before,
+.section-heading::after {
+    height: 1px;
+    flex: 1;
+    background: #293650;
+    content: '';
+}
+
 .projects-category {
     position: relative;
     width: 100vw;
     height: 100dvh;
     min-height: 680px;
+    padding-top: 32px;
     align-items: flex-start;
     justify-self: center;
 }
@@ -165,6 +189,11 @@ body.viewer-open {
     width: 320px;
     margin: 0;
     transform: translate(-50%, -50%) !important;
+}
+
+.projects-category .section-heading {
+    width: min(90vw, 1000px);
+    margin: 0 auto 28px;
 }
 
 .projects-category .items-list {
@@ -492,6 +521,27 @@ body.viewer-open {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.project-status {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 3px 8px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.project-status-finished {
+    color: #8ee6b5;
+}
+
+.project-status-unfinished {
+    color: #f2c879;
 }
 
 /* Detail panel */
@@ -988,6 +1038,10 @@ body.viewer-open {
     font-size: 12px;
 }
 
+.projects-category .project-status {
+    margin-top: 6px;
+}
+
 .media-viewer-code {
     margin: 0;
     padding: 22px;
@@ -1233,6 +1287,12 @@ body.viewer-open {
         opacity: 1 !important;
     }
 
+    .section-heading {
+        margin-bottom: 22px;
+        font-size: clamp(32px, 8vw, 52px);
+        text-align: center;
+    }
+
     .category-icon-wrapper {
         display: flex;
         width: 100%;
@@ -1247,6 +1307,14 @@ body.viewer-open {
         width: 100%;
         height: auto;
         align-items: center;
+    }
+
+    .projects-category .section-heading {
+        position: static;
+        width: 100%;
+        margin: 0 0 24px;
+        transform: none;
+        text-align: center;
     }
 
     .projects-category .category-icon-wrapper {
@@ -1939,6 +2007,7 @@ body,
         width: 100vw;
         height: 100%;
         min-height: 0;
+        padding-top: 32px;
         align-items: flex-start;
     }
 
@@ -1948,6 +2017,13 @@ body,
         right: auto;
         width: 320px;
         transform: translate(-50%, -50%) !important;
+    }
+
+    .projects-category .section-heading {
+        position: static;
+        width: min(90vw, 1000px);
+        margin: 0 auto;
+        transform: none;
     }
 
     .projects-category .items-list,
