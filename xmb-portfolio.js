@@ -19,9 +19,9 @@ const translations = {
         nl: 'Gebruik pijlen of klik om te navigeren • Klik op een item voor details'
     },
     navHintMobile: {
-        en: 'Use arrows or swipe to navigate • Click an item for details',
-        pt: 'Use as setas ou deslize para navegar • Clique em um item para detalhes',
-        nl: 'Gebruik pijlen of veeg om te navigeren • Klik op een item voor details'
+        en: 'Use arrows or click to navigate • Click an item for details',
+        pt: 'Use as setas ou clique para navegar • Clique em um item para detalhes',
+        nl: 'Gebruik pijlen of klik om te navigeren • Klik op een item voor details'
     },
     navHintKeyboard: {
         en: 'Arrows navigate • Enter opens • Escape returns',
@@ -260,13 +260,23 @@ const menuData = [
                 }
             },
             {
-                title: { en: 'LinkedIn / Instagram', pt: 'LinkedIn / Instagram', nl: 'LinkedIn / Instagram' },
-                description: { en: 'Professional + creative channels', pt: 'Canais profissionais e criativos', nl: 'Professionele + creatieve kanalen' },
-                content: { en: 'linkedin.com/in/arthur-hgarcia-210810385', pt: 'linkedin.com/in/arthur-hgarcia-210810385', nl: 'linkedin.com/in/arthur-hgarcia-210810385' },
+                title: { en: 'LinkedIn', pt: 'LinkedIn', nl: 'LinkedIn' },
+                description: { en: 'linkedin.com/in/arthur-hgarcia-210810385', pt: 'linkedin.com/in/arthur-hgarcia-210810385', nl: 'linkedin.com/in/arthur-hgarcia-210810385' },
+                content: { en: 'Professional profile.', pt: 'Perfil profissional.', nl: 'Professioneel profiel.' },
                 detailContent: {
-                    en: 'LinkedIn: https://www.linkedin.com/in/arthur-hgarcia-210810385/\nInstagram: https://www.instagram.com/zmbfiedk_backup_/',
-                    pt: 'LinkedIn: https://www.linkedin.com/in/arthur-hgarcia-210810385/\nInstagram: https://www.instagram.com/zmbfiedk_backup_/',
-                    nl: 'LinkedIn: https://www.linkedin.com/in/arthur-hgarcia-210810385/\nInstagram: https://www.instagram.com/zmbfiedk_backup_/'
+                    en: 'LinkedIn: https://www.linkedin.com/in/arthur-hgarcia-210810385/',
+                    pt: 'LinkedIn: https://www.linkedin.com/in/arthur-hgarcia-210810385/',
+                    nl: 'LinkedIn: https://www.linkedin.com/in/arthur-hgarcia-210810385/'
+                }
+            },
+            {
+                title: { en: 'Instagram', pt: 'Instagram', nl: 'Instagram' },
+                description: { en: 'instagram.com/zmbfiedk_backup_', pt: 'instagram.com/zmbfiedk_backup_', nl: 'instagram.com/zmbfiedk_backup_' },
+                content: { en: 'Creative profile.', pt: 'Perfil criativo.', nl: 'Creatief profiel.' },
+                detailContent: {
+                    en: 'Instagram: https://www.instagram.com/zmbfiedk_backup_/',
+                    pt: 'Instagram: https://www.instagram.com/zmbfiedk_backup_/',
+                    nl: 'Instagram: https://www.instagram.com/zmbfiedk_backup_/'
                 }
             }
         ]
@@ -344,6 +354,8 @@ const itemIcons = {
     mail: '<rect width="18" height="14" x="3" y="5" rx="2"/><path d="m3 7 9 6 9-6"/>',
     github: '<path d="M12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 6.84 9.49c.5.09.66-.22.66-.48v-1.68c-2.78.6-3.36-1.18-3.36-1.18-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.06-.61.06-.61 1 .08 1.52 1.03 1.52 1.03.88 1.5 2.3 1.06 2.85.82.09-.64.34-1.06.62-1.31-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.67-.1-.26-.45-1.28.1-2.67 0 0 .84-.27 2.75 1.02A9.52 9.52 0 0 1 12 6.8c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.39.2 2.41.1 2.67.64.69 1.03 1.58 1.03 2.67 0 3.85-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.75c0 .26.17.57.67.48A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/>',
     social: '<circle cx="6" cy="12" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 12h8M16.7 7.4l-5.4 3.2M11.3 13.4l5.4 3.2"/>',
+    linkedin: '<path d="M5 8.5v10M5 5.5v.1M9 8.5v10m0-5.5a4.5 4.5 0 0 1 9 0v5.5m-9-10v2.5"/>',
+    instagram: '<rect width="16" height="16" x="4" y="4" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1"/>',
     info: '<circle cx="12" cy="12" r="9"/><path d="M12 10v6"/><circle cx="12" cy="7" r="1"/>',
     book: '<path d="M4 6a2 2 0 0 1 2-2h12v16H6a2 2 0 0 1-2-2z"/><path d="M8 4v16"/>',
     target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="2"/>'
@@ -355,6 +367,8 @@ function getItemIconFor(catIdx, itemTitleEn) {
     if (menuData[catIdx]?.title.en === 'Contact') {
         if (itemTitleEn === 'Email') return itemIcons.mail;
         if (itemTitleEn === 'GitHub') return itemIcons.github;
+        if (itemTitleEn === 'LinkedIn') return itemIcons.linkedin;
+        if (itemTitleEn === 'Instagram') return itemIcons.instagram;
         return itemIcons.social;
     }
 
@@ -480,7 +494,7 @@ const PROJECT_DETAIL_INFO = {
         }
     },
     'DoomLikeShooter': {
-        github: '#',
+        github: 'https://github.com/zmbfiedk/doomshooter-CPP',
         status: 'unfinished',
         detailed: 'DoomLikeShooter\n\nProject snapshot\nA small, understandable first-person rendering prototype built with C++ and SFML 2.x. The project focuses on the underlying systems instead of a large content pipeline.\n\nCore systems\n- Grid-based map validation and collision-aware movement\n- Camera-space ray generation and DDA grid traversal\n- Per-column wall projection with distance and surface-orientation shading\n- Weapon selection, sprite rendering, fire-rate control, and procedural muzzle flash feedback\n\nProject goals\n- Represent an editable level as a simple grid\n- Convert player position and rotation into camera rays\n- Traverse the grid until each ray finds a wall\n- Turn wall distance into screen height and brightness\n- Keep each system small enough to understand, debug, and extend\n\nTechnology\n- C++\n- SFML 2.x\n- Visual Studio 2022\n- MSVC v143\n- x64 Windows build configuration',
         caseStudy: {
@@ -758,7 +772,7 @@ const PROJECT_DETAIL_INFO = {
         }
     },
     'Digital Divinity': {
-        github: '#',
+        github: 'https://github.com/BAStudio/NeoNTeamA2026',
         status: 'finished',
         detailed: 'Digital Divinity is a stealth-horror Unity project focused on enemy perception, player traversal, audio feedback, and tension.\n\nMy contribution\n- Designed and implemented enemy perception using vision, hearing, camera signals, detection meters, and memory.\n- Built the enemy state flow from patrol and alert through stalking, chase, and search behavior.\n- Implemented player movement states including sprinting, crouching, jumping, climbing, ledge grabbing, and mantling.\n- Connected player movement to footsteps, sound stimuli, enemy hearing, detection, and danger music.\n\nThe visual sheets document the gameplay systems and the way they connect into a readable stealth loop.',
         caseStudy: {
@@ -942,6 +956,49 @@ function renderProjectCaseStudy(detailPageContent, caseStudy) {
     `;
 }
 
+function renderLinkedDetailContent(detailPageContent, text) {
+    detailPageContent.replaceChildren();
+
+    const linkPattern = /(https?:\/\/[^\s]+|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,})/gi;
+    const lines = text.split('\n');
+
+    lines.forEach((line, lineIndex) => {
+        let lastIndex = 0;
+
+        for (const match of line.matchAll(linkPattern)) {
+            const linkText = match[0];
+            const start = match.index;
+            const trailingPunctuation = linkText.match(/[.,;:!?]+$/)?.[0] || '';
+            const linkValue = trailingPunctuation
+                ? linkText.slice(0, -trailingPunctuation.length)
+                : linkText;
+
+            detailPageContent.append(
+                document.createTextNode(line.slice(lastIndex, start))
+            );
+
+            const link = document.createElement('a');
+            link.href = linkValue.includes('@') ? `mailto:${linkValue}` : linkValue;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = linkValue;
+            detailPageContent.append(link);
+
+            if (trailingPunctuation) {
+                detailPageContent.append(document.createTextNode(trailingPunctuation));
+            }
+
+            lastIndex = start + linkText.length;
+        }
+
+        detailPageContent.append(document.createTextNode(line.slice(lastIndex)));
+
+        if (lineIndex < lines.length - 1) {
+            detailPageContent.append(document.createElement('br'));
+        }
+    });
+}
+
 function renderDetailPageContent(detailPageContent, currentItem, projectInfo) {
     detailPageContent.classList.remove('project-case-study');
 
@@ -950,17 +1007,15 @@ function renderDetailPageContent(detailPageContent, currentItem, projectInfo) {
         return;
     }
 
-    detailPageContent.textContent = (projectInfo && projectInfo.detailed)
+    const detailText = (projectInfo && projectInfo.detailed)
         ? getProjectDetailText(projectInfo)
         : (currentItem.detailContent[currentLanguage] || currentItem.content[currentLanguage]);
+    renderLinkedDetailContent(detailPageContent, detailText);
 }
 
 // State
 let selectedCategory = 0;
 let selectedItem = 0;
-let touchStart = null;
-let touchEnd = null;
-const minSwipeDistance = 50;
 
 // Initialize
 function init() {
@@ -1053,6 +1108,16 @@ function renderCategories() {
             <div class="about-copy" data-about-copy>
                 ${category.items[0].detailContent[currentLanguage].split('\n\n').map((paragraph) => `<p>${paragraph}</p>`).join('')}
             </div>
+            ` : category.title.en === 'Contact' ? `
+            <div class="items-list contact-links">
+                ${category.items.map((item) => `
+                    <a class="contact-link" href="${getContactHref(item.title.en)}" target="_blank" rel="noopener noreferrer" aria-label="${item.title[currentLanguage]}" title="${item.title[currentLanguage]}">
+                        <span class="item-inline-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">${getItemIconFor(catIdx, item.title.en)}</svg>
+                        </span>
+                    </a>
+                `).join('')}
+            </div>
             ` : `<div class="items-list ${isProjectsCategory(catIdx) ? 'projects-list' : ''}">
                 ${isProjectsCategory(catIdx) ? `<div class="projects-track">` : ''}
                 ${category.items.map((item, itemIdx) => `
@@ -1074,6 +1139,17 @@ function renderCategories() {
         </section>
         </div>
     `).join('');
+}
+
+function getContactHref(title) {
+    const links = {
+        Email: 'mailto:arthurhgarcia10@gmail.com',
+        GitHub: 'https://github.com/zmbfiedk',
+        LinkedIn: 'https://www.linkedin.com/in/arthur-hgarcia-210810385/',
+        Instagram: 'https://www.instagram.com/zmbfiedk_backup_/'
+    };
+
+    return links[title] || '#';
 }
 
 // Handle item click
@@ -1239,12 +1315,6 @@ function updateUI() {
         });
     });
 
-    // Update detail panel
-    const detailPanel = document.getElementById('detailPanel');
-    const detailText = document.getElementById('detailText');
-    detailText.textContent = menuData[selectedCategory].items[selectedItem].content[currentLanguage];
-    detailPanel.classList.add('visible');
-
     const projectsIndex = menuData.findIndex((category) => category.title.en === 'Projects');
     if (projectsIndex >= 0) {
         const selectedProject = menuData[projectsIndex].items[selectedCategory === projectsIndex ? selectedItem : 0];
@@ -1368,51 +1438,6 @@ function attachEventListeners() {
 
         if (e.target.closest('[data-close-viewer="true"]')) {
             closeMediaViewer();
-        }
-    });
-
-    // Touch navigation
-    document.addEventListener('touchstart', (e) => {
-        touchEnd = null;
-        touchStart = {
-            x: e.touches[0].clientX,
-            y: e.touches[0].clientY
-        };
-    });
-
-    document.addEventListener('touchmove', (e) => {
-        touchEnd = {
-            x: e.touches[0].clientX,
-            y: e.touches[0].clientY
-        };
-    });
-
-    document.addEventListener('touchend', () => {
-        if (!touchStart || !touchEnd) return;
-        if (document.getElementById('detailPage').classList.contains('visible')) return;
-
-        const distanceX = touchStart.x - touchEnd.x;
-        const distanceY = touchStart.y - touchEnd.y;
-        const isHorizontalSwipe = Math.abs(distanceX) > Math.abs(distanceY);
-
-        if (isHorizontalSwipe) {
-            if (Math.abs(distanceX) > minSwipeDistance) {
-                if (distanceX > 0) {
-                    selectedCategory = Math.min(menuData.length - 1, selectedCategory + 1);
-                    selectedItem = 0;
-                } else {
-                    selectedCategory = Math.max(0, selectedCategory - 1);
-                    selectedItem = 0;
-                }
-                updateUI();
-            }
-        } else if (Math.abs(distanceY) > minSwipeDistance) {
-            if (distanceY > 0) {
-                selectedItem = Math.min(menuData[selectedCategory].items.length - 1, selectedItem + 1);
-            } else {
-                selectedItem = Math.max(0, selectedItem - 1);
-            }
-            updateUI();
         }
     });
 

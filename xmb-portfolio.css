@@ -5,7 +5,6 @@
 }
 
 :root {
-    --detail-panel-offset-x: 0px;
     --list-only-offset-x: -40px;
 }
 
@@ -544,35 +543,6 @@ body.viewer-open {
     color: #f2c879;
 }
 
-/* Detail panel */
-.detail-panel {
-    position: absolute;
-    bottom: 48px;
-    left: 50%;
-    transform: translateX(calc(-50% + var(--detail-panel-offset-x)));
-    max-width: 672px;
-    width: 90%;
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.detail-panel.visible {
-    opacity: 1;
-}
-
-.detail-content {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    padding: 24px;
-    border: 1px solid rgba(168, 85, 247, 0.3);
-}
-
-.detail-text {
-    color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-}
-
 /* Detail page */
 .detail-page {
     position: relative;
@@ -636,8 +606,8 @@ body.viewer-open {
 }
 
 .github-icon-link {
-    width: 42px;
-    height: 42px;
+    width: 56px;
+    height: 56px;
     border-radius: 10px;
     border: 1px solid rgba(168, 85, 247, 0.5);
     background: rgba(168, 85, 247, 0.18);
@@ -655,8 +625,8 @@ body.viewer-open {
 }
 
 .github-icon-link svg {
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
     fill: currentColor;
 }
 
@@ -675,6 +645,16 @@ body.viewer-open {
     font-size: 18px;
     line-height: 1.7;
     white-space: pre-line;
+}
+
+.detail-card .content a {
+    color: #b99cff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.detail-card .content a:hover {
+    color: #f7c873;
 }
 
 .detail-page-content:has(.project-case-study) {
@@ -1089,7 +1069,6 @@ body.viewer-open {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     :root {
-        --detail-panel-offset-x: 0px;
         --list-only-offset-x: 0px;
     }
 }
@@ -1419,27 +1398,6 @@ body.viewer-open {
         white-space: normal;
     }
 
-    .detail-panel {
-        position: static;
-        width: 100%;
-        max-width: 620px;
-        margin-top: 36px;
-        transform: none;
-    }
-
-    .detail-content {
-        padding: 0;
-        border: 0;
-        background: transparent;
-    }
-
-    .detail-text {
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.6;
-        text-align: left;
-    }
-
     .navigation-controls,
     .nav-hint {
         display: none;
@@ -1615,19 +1573,6 @@ body.viewer-open {
         font-size: 11px;
     }
 
-    .detail-panel {
-        bottom: 18px;
-        width: 94%;
-    }
-
-    .detail-content {
-        padding: 14px;
-    }
-
-    .detail-text {
-        font-size: 13px;
-    }
-
     .nav-hint {
         width: calc(100% - 20px);
         font-size: 11px;
@@ -1682,8 +1627,8 @@ body.viewer-open {
     }
 
     .github-icon-link {
-        width: 34px;
-        height: 34px;
+        width: 48px;
+        height: 48px;
     }
 
     .detail-card .subtitle {
@@ -1962,6 +1907,50 @@ body,
     box-shadow: 0 8px 20px rgba(3, 8, 20, 0.22);
 }
 
+.contact-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    max-height: none;
+    overflow: visible;
+    margin-left: 0;
+    padding: 4px 0;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border: 1px solid #293650;
+    border-radius: 10px;
+    background: #172237;
+    color: #b99cff;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+    border-color: #8064c7;
+    background: #1c2a43;
+    color: #f7c873;
+    transform: translateY(-2px);
+}
+
+.contact-link .item-inline-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.contact-link .item-inline-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
 @media (min-width: 769px) {
     .xmb-container {
         align-items: flex-start;
@@ -2062,4 +2051,82 @@ body,
     .projects-category .item-card:nth-child(5) { top: 50%; left: 92%; }
     .projects-category .item-card:nth-child(6) { top: 84%; left: 86%; }
     .projects-category .item-card:nth-child(n + 7) { display: none; }
+}
+
+@media (max-width: 768px) {
+    body:not(.viewer-open) {
+        height: auto;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto !important;
+    }
+
+    .xmb-container {
+        padding-bottom: 0;
+    }
+
+    .portfolio-page,
+    .portfolio-page-projects,
+    .category-column,
+    .projects-category {
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .portfolio-page,
+    .portfolio-page-projects {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .portfolio-page-projects {
+        display: block;
+    }
+
+    .projects-category .items-list,
+    .projects-category .projects-list,
+    .projects-category .projects-track {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .projects-category .item-card {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100%;
+        height: auto;
+        min-height: 156px;
+    }
+
+    .header-brand {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .header-brand h1,
+    .header-kicker {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .category-column:not(.about-category) .category-icon {
+        display: none;
+    }
+
+    .category-column:not(.about-category) .category-icon-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .category-column {
+        width: min(86vw, 320px);
+        margin-inline: auto;
+    }
 }
